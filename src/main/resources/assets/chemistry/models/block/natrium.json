@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "chemistry:blocks/natrium",
+    "up": "chemistry:blocks/natrium",
+    "north": "chemistry:blocks/natrium",
+    "east": "chemistry:blocks/natrium",
+    "south": "chemistry:blocks/natrium",
+    "west": "chemistry:blocks/natrium",
+    "particle": "chemistry:blocks/natrium"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "axis=z": {
+      "model": "chemistry:block/chemist_land_portal_ew"
+    },
+    "axis=x": {
+      "model": "chemistry:block/chemist_land_portal_ns"
+    }
+  }
+}

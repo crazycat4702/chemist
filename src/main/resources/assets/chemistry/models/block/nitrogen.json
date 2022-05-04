@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "chemistry:blocks/nitrogen",
+    "up": "chemistry:blocks/nitrogen",
+    "north": "chemistry:blocks/nitrogen",
+    "east": "chemistry:blocks/nitrogen",
+    "south": "chemistry:blocks/nitrogen",
+    "west": "chemistry:blocks/nitrogen",
+    "particle": "chemistry:blocks/nitrogen"
+  }
+}

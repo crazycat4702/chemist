@@ -1,0 +1,21 @@
+{
+  "_fv": 24,
+  "_type": "potion",
+  "definition": {
+    "potionName": "Potion of Radioactive",
+    "splashName": "Splash Potion of Radioactive",
+    "lingeringName": "Lingering Potion of Radioactive",
+    "arrowName": "Arrow of Radioactive",
+    "effects": [
+      {
+        "effect": {
+          "value": "CUSTOM:Radiation"
+        },
+        "duration": 3600,
+        "amplifier": 0,
+        "ambient": false,
+        "showParticles": true
+      }
+    ]
+  }
+}

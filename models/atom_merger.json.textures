@@ -1,0 +1,14 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "0": "black_wool",
+        "1": "iron_block",
+        "2": "merge",
+        "3": "redstone_block",
+        "missing": ""
+      },
+      "name": "default"
+    }
+  }
+}

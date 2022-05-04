@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "chemistry:blocks/fluorine",
+    "up": "chemistry:blocks/fluorine",
+    "north": "chemistry:blocks/fluorine",
+    "east": "chemistry:blocks/fluorine",
+    "south": "chemistry:blocks/fluorine",
+    "west": "chemistry:blocks/fluorine",
+    "particle": "chemistry:blocks/fluorine"
+  }
+}

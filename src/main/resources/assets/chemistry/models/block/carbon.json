@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "chemistry:blocks/carbon",
+    "up": "chemistry:blocks/carbon",
+    "north": "chemistry:blocks/carbon",
+    "east": "chemistry:blocks/carbon",
+    "south": "chemistry:blocks/carbon",
+    "west": "chemistry:blocks/carbon",
+    "particle": "chemistry:blocks/carbon"
+  }
+}

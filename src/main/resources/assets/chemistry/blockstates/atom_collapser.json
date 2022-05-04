@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "chemistry:block/atom_collapser"
+    },
+    "facing=east": {
+      "model": "chemistry:block/atom_collapser",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "chemistry:block/atom_collapser",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "chemistry:block/atom_collapser",
+      "y": 270
+    }
+  }
+}

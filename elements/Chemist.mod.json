@@ -1,0 +1,11 @@
+{
+  "_fv": 24,
+  "_type": "tab",
+  "definition": {
+    "name": "Chemist",
+    "icon": {
+      "value": "CUSTOM:Chemistry"
+    },
+    "showSearch": false
+  }
+}

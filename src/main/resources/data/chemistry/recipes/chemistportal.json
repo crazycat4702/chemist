@@ -1,0 +1,16 @@
+{
+  "group": "chemistry",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:flint_and_steel"
+    },
+    {
+      "item": "minecraft:iron_nugget"
+    }
+  ],
+  "result": {
+    "item": "chemistry:chemist_land",
+    "count": 1
+  }
+}

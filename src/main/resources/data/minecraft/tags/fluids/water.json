@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "chemistry:pollutedfluid",
+    "chemistry:pollutedfluid_flowing"
+  ]
+}

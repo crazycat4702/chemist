@@ -1,0 +1,17 @@
+{
+  "_fv": 24,
+  "_type": "musicdisc",
+  "definition": {
+    "texture": "music_disc_13",
+    "name": "Trigonometry",
+    "description": "Song of trigonometry",
+    "creativeTab": {
+      "value": "MISC"
+    },
+    "music": {
+      "value": "CUSTOM:trigonometry"
+    },
+    "specialInfo": [],
+    "hasGlow": false
+  }
+}

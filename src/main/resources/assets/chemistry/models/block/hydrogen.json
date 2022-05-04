@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "chemistry:blocks/hydrogen",
+    "up": "chemistry:blocks/hydrogen",
+    "north": "chemistry:blocks/hydrogen",
+    "east": "chemistry:blocks/hydrogen",
+    "south": "chemistry:blocks/hydrogen",
+    "west": "chemistry:blocks/hydrogen",
+    "particle": "chemistry:blocks/hydrogen"
+  }
+}

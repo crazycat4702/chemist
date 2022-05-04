@@ -1,0 +1,12 @@
+{
+  "parent": "chemistry:custom/atom_collapser",
+  "textures": {
+    "all": "chemistry:blocks/chem",
+    "particle": "chemistry:blocks/chem",
+    "0": "chemistry:blocks/black_wool",
+    "1": "chemistry:blocks/iron_block",
+    "2": "chemistry:blocks/chem",
+    "3": "chemistry:blocks/redstone_block",
+    "missing": "chemistry:blocks/"
+  }
+}

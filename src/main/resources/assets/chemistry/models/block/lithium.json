@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "chemistry:blocks/lithium",
+    "up": "chemistry:blocks/lithium",
+    "north": "chemistry:blocks/lithium",
+    "east": "chemistry:blocks/lithium",
+    "south": "chemistry:blocks/lithium",
+    "west": "chemistry:blocks/lithium",
+    "particle": "chemistry:blocks/lithium"
+  }
+}

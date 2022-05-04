@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "chemistry:blocks/boron",
+    "up": "chemistry:blocks/boron",
+    "north": "chemistry:blocks/boron",
+    "east": "chemistry:blocks/boron",
+    "south": "chemistry:blocks/boron",
+    "west": "chemistry:blocks/boron",
+    "particle": "chemistry:blocks/boron"
+  }
+}

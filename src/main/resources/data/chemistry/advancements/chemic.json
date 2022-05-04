@@ -1,0 +1,29 @@
+{
+  "display": {
+    "background": "minecraft:textures/block/stone.png",
+    "icon": {
+      "item": "chemistry:chemistry"
+    },
+    "title": {
+      "translate": "advancements.chemic.title"
+    },
+    "description": {
+      "translate": "advancements.chemic.descr"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "chemic": {
+      "trigger": "minecraft:changed_dimension",
+      "conditions": {
+        "to": "chemistry:chemist_land"
+      }
+    }
+  },
+  "rewards": {
+    "experience": 10
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "chemistry:blocks/neon",
+    "up": "chemistry:blocks/neon",
+    "north": "chemistry:blocks/neon",
+    "east": "chemistry:blocks/neon",
+    "south": "chemistry:blocks/neon",
+    "west": "chemistry:blocks/neon",
+    "particle": "chemistry:blocks/neon"
+  }
+}
