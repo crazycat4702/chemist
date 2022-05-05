@@ -23,6 +23,7 @@ import java.util.Map;
 import java.util.Collection;
 
 public class RadiationOnEffectActiveTickProcedure {
+
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("entity") == null) {
 			if (!dependencies.containsKey("entity"))
@@ -30,8 +31,8 @@ public class RadiationOnEffectActiveTickProcedure {
 			return;
 		}
 		Entity entity = (Entity) dependencies.get("entity");
-		if ((!(entity instanceof LivingEntity ? (((LivingEntity) entity).getCreatureAttribute() == CreatureAttribute.UNDEAD) : false))) {
-			if ((!(new Object() {
+		if (!(entity instanceof LivingEntity ? (((LivingEntity) entity).getCreatureAttribute() == CreatureAttribute.UNDEAD) : false)) {
+			if (!(new Object() {
 				public boolean checkGamemode(Entity _ent) {
 					if (_ent instanceof ServerPlayerEntity) {
 						return ((ServerPlayerEntity) _ent).interactionManager.getGameType() == GameType.CREATIVE;
@@ -42,27 +43,21 @@ public class RadiationOnEffectActiveTickProcedure {
 					}
 					return false;
 				}
-			}.checkGamemode(entity)))) {
-				if ((((entity instanceof LivingEntity)
-						? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.fromSlotTypeAndIndex(EquipmentSlotType.Group.ARMOR, (int) 3))
-						: ItemStack.EMPTY).getItem() == RadiationprotectionsuitItem.helmet)) {
-					if ((((entity instanceof LivingEntity)
-							? ((LivingEntity) entity)
-									.getItemStackFromSlot(EquipmentSlotType.fromSlotTypeAndIndex(EquipmentSlotType.Group.ARMOR, (int) 2))
-							: ItemStack.EMPTY).getItem() == RadiationprotectionsuitItem.body)) {
-						if ((((entity instanceof LivingEntity)
-								? ((LivingEntity) entity)
-										.getItemStackFromSlot(EquipmentSlotType.fromSlotTypeAndIndex(EquipmentSlotType.Group.ARMOR, (int) 1))
-								: ItemStack.EMPTY).getItem() == RadiationprotectionsuitItem.legs)) {
-							if ((((entity instanceof LivingEntity)
-									? ((LivingEntity) entity)
-											.getItemStackFromSlot(EquipmentSlotType.fromSlotTypeAndIndex(EquipmentSlotType.Group.ARMOR, (int) 0))
-									: ItemStack.EMPTY).getItem() == RadiationprotectionsuitItem.boots)) {
+			}.checkGamemode(entity))) {
+				if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.HEAD) : ItemStack.EMPTY)
+						.getItem() == RadiationprotectionsuitItem.helmet) {
+					if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.CHEST) : ItemStack.EMPTY)
+							.getItem() == RadiationprotectionsuitItem.body) {
+						if (((entity instanceof LivingEntity)
+								? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.LEGS)
+								: ItemStack.EMPTY).getItem() == RadiationprotectionsuitItem.legs) {
+							if (((entity instanceof LivingEntity)
+									? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.FEET)
+									: ItemStack.EMPTY).getItem() == RadiationprotectionsuitItem.boots) {
 								entity.attackEntityFrom(DamageSource.MAGIC, (float) 0);
 								{
 									ItemStack _ist = ((entity instanceof LivingEntity)
-											? ((LivingEntity) entity).getItemStackFromSlot(
-													EquipmentSlotType.fromSlotTypeAndIndex(EquipmentSlotType.Group.ARMOR, (int) 0))
+											? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.FEET)
 											: ItemStack.EMPTY);
 									if (_ist.attemptDamageItem((int) 1, new Random(), null)) {
 										_ist.shrink(1);
@@ -71,8 +66,7 @@ public class RadiationOnEffectActiveTickProcedure {
 								}
 								{
 									ItemStack _ist = ((entity instanceof LivingEntity)
-											? ((LivingEntity) entity).getItemStackFromSlot(
-													EquipmentSlotType.fromSlotTypeAndIndex(EquipmentSlotType.Group.ARMOR, (int) 1))
+											? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.LEGS)
 											: ItemStack.EMPTY);
 									if (_ist.attemptDamageItem((int) 1, new Random(), null)) {
 										_ist.shrink(1);
@@ -81,8 +75,7 @@ public class RadiationOnEffectActiveTickProcedure {
 								}
 								{
 									ItemStack _ist = ((entity instanceof LivingEntity)
-											? ((LivingEntity) entity).getItemStackFromSlot(
-													EquipmentSlotType.fromSlotTypeAndIndex(EquipmentSlotType.Group.ARMOR, (int) 2))
+											? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.CHEST)
 											: ItemStack.EMPTY);
 									if (_ist.attemptDamageItem((int) 1, new Random(), null)) {
 										_ist.shrink(1);
@@ -91,8 +84,7 @@ public class RadiationOnEffectActiveTickProcedure {
 								}
 								{
 									ItemStack _ist = ((entity instanceof LivingEntity)
-											? ((LivingEntity) entity).getItemStackFromSlot(
-													EquipmentSlotType.fromSlotTypeAndIndex(EquipmentSlotType.Group.ARMOR, (int) 3))
+											? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.HEAD)
 											: ItemStack.EMPTY);
 									if (_ist.attemptDamageItem((int) 1, new Random(), null)) {
 										_ist.shrink(1);
@@ -100,7 +92,7 @@ public class RadiationOnEffectActiveTickProcedure {
 									}
 								}
 							} else {
-								entity.attackEntityFrom(DamageSource.MAGIC, (float) ((new Object() {
+								entity.attackEntityFrom(DamageSource.MAGIC, (float) (new Object() {
 									int check(Entity _entity) {
 										if (_entity instanceof LivingEntity) {
 											Collection<EffectInstance> effects = ((LivingEntity) _entity).getActivePotionEffects();
@@ -111,10 +103,10 @@ public class RadiationOnEffectActiveTickProcedure {
 										}
 										return 0;
 									}
-								}.check(entity)) + 3));
+								}.check(entity) + 3));
 							}
 						} else {
-							entity.attackEntityFrom(DamageSource.MAGIC, (float) ((new Object() {
+							entity.attackEntityFrom(DamageSource.MAGIC, (float) (new Object() {
 								int check(Entity _entity) {
 									if (_entity instanceof LivingEntity) {
 										Collection<EffectInstance> effects = ((LivingEntity) _entity).getActivePotionEffects();
@@ -125,10 +117,10 @@ public class RadiationOnEffectActiveTickProcedure {
 									}
 									return 0;
 								}
-							}.check(entity)) + 3));
+							}.check(entity) + 3));
 						}
 					} else {
-						entity.attackEntityFrom(DamageSource.GENERIC, (float) ((new Object() {
+						entity.attackEntityFrom(DamageSource.GENERIC, (float) (new Object() {
 							int check(Entity _entity) {
 								if (_entity instanceof LivingEntity) {
 									Collection<EffectInstance> effects = ((LivingEntity) _entity).getActivePotionEffects();
@@ -139,10 +131,10 @@ public class RadiationOnEffectActiveTickProcedure {
 								}
 								return 0;
 							}
-						}.check(entity)) + 3));
+						}.check(entity) + 3));
 					}
 				} else {
-					entity.attackEntityFrom(DamageSource.MAGIC, (float) ((new Object() {
+					entity.attackEntityFrom(DamageSource.MAGIC, (float) (new Object() {
 						int check(Entity _entity) {
 							if (_entity instanceof LivingEntity) {
 								Collection<EffectInstance> effects = ((LivingEntity) _entity).getActivePotionEffects();
@@ -153,7 +145,7 @@ public class RadiationOnEffectActiveTickProcedure {
 							}
 							return 0;
 						}
-					}.check(entity)) + 3));
+					}.check(entity) + 3));
 				}
 			}
 		}

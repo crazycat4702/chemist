@@ -29,6 +29,7 @@ public class RadiationprotectionsuitItem extends ChemistryModElements.ModElement
 	public static final Item legs = null;
 	@ObjectHolder("chemistry:radiationprotectionsuit_boots")
 	public static final Item boots = null;
+
 	public RadiationprotectionsuitItem(ChemistryModElements instance) {
 		super(instance, 22);
 	}
@@ -102,4 +103,5 @@ public class RadiationprotectionsuitItem extends ChemistryModElements.ModElement
 			}
 		}.setRegistryName("radiationprotectionsuit_boots"));
 	}
+
 }

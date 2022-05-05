@@ -32,6 +32,7 @@ import java.util.function.Supplier;
 import java.util.Map;
 
 public class ClickedMergeProcedure {
+
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("entity") == null) {
 			if (!dependencies.containsKey("entity"))
@@ -39,7 +40,7 @@ public class ClickedMergeProcedure {
 			return;
 		}
 		Entity entity = (Entity) dependencies.get("entity");
-		if (((new Object() {
+		if ((new Object() {
 			public ItemStack getItemStack(int sltid) {
 				Entity _ent = entity;
 				if (_ent instanceof ServerPlayerEntity) {
@@ -53,7 +54,7 @@ public class ClickedMergeProcedure {
 				}
 				return ItemStack.EMPTY;
 			}
-		}.getItemStack((int) (3))).getItem() == FuelItem.block)) {
+		}.getItemStack((int) (3))).getItem() == FuelItem.block) {
 			{
 				Entity _ent = entity;
 				if (_ent instanceof ServerPlayerEntity) {
@@ -67,7 +68,7 @@ public class ClickedMergeProcedure {
 					}
 				}
 			}
-			if (((new Object() {
+			if ((new Object() {
 				public ItemStack getItemStack(int sltid) {
 					Entity _ent = entity;
 					if (_ent instanceof ServerPlayerEntity) {
@@ -81,8 +82,8 @@ public class ClickedMergeProcedure {
 					}
 					return ItemStack.EMPTY;
 				}
-			}.getItemStack((int) (0))).getItem() == NucleusItem.block)) {
-				if (((new Object() {
+			}.getItemStack((int) (0))).getItem() == NucleusItem.block) {
+				if ((new Object() {
 					public ItemStack getItemStack(int sltid) {
 						Entity _ent = entity;
 						if (_ent instanceof ServerPlayerEntity) {
@@ -96,8 +97,8 @@ public class ClickedMergeProcedure {
 						}
 						return ItemStack.EMPTY;
 					}
-				}.getItemStack((int) (1))).getItem() == ElectronItem.block)) {
-					if (((new Object() {
+				}.getItemStack((int) (1))).getItem() == ElectronItem.block) {
+					if ((new Object() {
 						public ItemStack getItemStack(int sltid) {
 							Entity _ent = entity;
 							if (_ent instanceof ServerPlayerEntity) {
@@ -111,8 +112,8 @@ public class ClickedMergeProcedure {
 							}
 							return ItemStack.EMPTY;
 						}
-					}.getItemStack((int) (2))).getItem() == Blocks.AIR.asItem())) {
-						if ((((new Object() {
+					}.getItemStack((int) (2))).getItem() == Blocks.AIR.asItem()) {
+						if (new Object() {
 							public int getAmount(int sltid) {
 								if (entity instanceof ServerPlayerEntity) {
 									Container _current = ((ServerPlayerEntity) entity).openContainer;
@@ -127,7 +128,7 @@ public class ClickedMergeProcedure {
 								}
 								return 0;
 							}
-						}.getAmount((int) (0))) == 1) && ((new Object() {
+						}.getAmount((int) (0)) == 1 && new Object() {
 							public int getAmount(int sltid) {
 								if (entity instanceof ServerPlayerEntity) {
 									Container _current = ((ServerPlayerEntity) entity).openContainer;
@@ -142,7 +143,7 @@ public class ClickedMergeProcedure {
 								}
 								return 0;
 							}
-						}.getAmount((int) (1))) == 1))) {
+						}.getAmount((int) (1)) == 1) {
 							if (entity instanceof ServerPlayerEntity) {
 								Container _current = ((ServerPlayerEntity) entity).openContainer;
 								if (_current instanceof Supplier) {
@@ -177,7 +178,7 @@ public class ClickedMergeProcedure {
 							}
 							if (entity instanceof LivingEntity)
 								((LivingEntity) entity).addPotionEffect(new EffectInstance(RadiationPotionEffect.potion, (int) 60, (int) 1));
-						} else if ((((new Object() {
+						} else if (new Object() {
 							public int getAmount(int sltid) {
 								if (entity instanceof ServerPlayerEntity) {
 									Container _current = ((ServerPlayerEntity) entity).openContainer;
@@ -192,7 +193,7 @@ public class ClickedMergeProcedure {
 								}
 								return 0;
 							}
-						}.getAmount((int) (0))) == 2) && ((new Object() {
+						}.getAmount((int) (0)) == 2 && new Object() {
 							public int getAmount(int sltid) {
 								if (entity instanceof ServerPlayerEntity) {
 									Container _current = ((ServerPlayerEntity) entity).openContainer;
@@ -207,7 +208,7 @@ public class ClickedMergeProcedure {
 								}
 								return 0;
 							}
-						}.getAmount((int) (1))) == 2))) {
+						}.getAmount((int) (1)) == 2) {
 							if (entity instanceof ServerPlayerEntity) {
 								Container _current = ((ServerPlayerEntity) entity).openContainer;
 								if (_current instanceof Supplier) {
@@ -242,7 +243,7 @@ public class ClickedMergeProcedure {
 							}
 							if (entity instanceof LivingEntity)
 								((LivingEntity) entity).addPotionEffect(new EffectInstance(RadiationPotionEffect.potion, (int) 60, (int) 1));
-						} else if ((((new Object() {
+						} else if (new Object() {
 							public int getAmount(int sltid) {
 								if (entity instanceof ServerPlayerEntity) {
 									Container _current = ((ServerPlayerEntity) entity).openContainer;
@@ -257,7 +258,7 @@ public class ClickedMergeProcedure {
 								}
 								return 0;
 							}
-						}.getAmount((int) (0))) == 3) && ((new Object() {
+						}.getAmount((int) (0)) == 3 && new Object() {
 							public int getAmount(int sltid) {
 								if (entity instanceof ServerPlayerEntity) {
 									Container _current = ((ServerPlayerEntity) entity).openContainer;
@@ -272,7 +273,7 @@ public class ClickedMergeProcedure {
 								}
 								return 0;
 							}
-						}.getAmount((int) (1))) == 3))) {
+						}.getAmount((int) (1)) == 3) {
 							if (entity instanceof ServerPlayerEntity) {
 								Container _current = ((ServerPlayerEntity) entity).openContainer;
 								if (_current instanceof Supplier) {
@@ -307,7 +308,7 @@ public class ClickedMergeProcedure {
 							}
 							if (entity instanceof LivingEntity)
 								((LivingEntity) entity).addPotionEffect(new EffectInstance(RadiationPotionEffect.potion, (int) 60, (int) 1));
-						} else if ((((new Object() {
+						} else if (new Object() {
 							public int getAmount(int sltid) {
 								if (entity instanceof ServerPlayerEntity) {
 									Container _current = ((ServerPlayerEntity) entity).openContainer;
@@ -322,7 +323,7 @@ public class ClickedMergeProcedure {
 								}
 								return 0;
 							}
-						}.getAmount((int) (0))) == 4) && ((new Object() {
+						}.getAmount((int) (0)) == 4 && new Object() {
 							public int getAmount(int sltid) {
 								if (entity instanceof ServerPlayerEntity) {
 									Container _current = ((ServerPlayerEntity) entity).openContainer;
@@ -337,7 +338,7 @@ public class ClickedMergeProcedure {
 								}
 								return 0;
 							}
-						}.getAmount((int) (1))) == 4))) {
+						}.getAmount((int) (1)) == 4) {
 							if (entity instanceof ServerPlayerEntity) {
 								Container _current = ((ServerPlayerEntity) entity).openContainer;
 								if (_current instanceof Supplier) {
@@ -372,7 +373,7 @@ public class ClickedMergeProcedure {
 							}
 							if (entity instanceof LivingEntity)
 								((LivingEntity) entity).addPotionEffect(new EffectInstance(RadiationPotionEffect.potion, (int) 60, (int) 1));
-						} else if ((((new Object() {
+						} else if (new Object() {
 							public int getAmount(int sltid) {
 								if (entity instanceof ServerPlayerEntity) {
 									Container _current = ((ServerPlayerEntity) entity).openContainer;
@@ -387,7 +388,7 @@ public class ClickedMergeProcedure {
 								}
 								return 0;
 							}
-						}.getAmount((int) (0))) == 5) && ((new Object() {
+						}.getAmount((int) (0)) == 5 && new Object() {
 							public int getAmount(int sltid) {
 								if (entity instanceof ServerPlayerEntity) {
 									Container _current = ((ServerPlayerEntity) entity).openContainer;
@@ -402,7 +403,7 @@ public class ClickedMergeProcedure {
 								}
 								return 0;
 							}
-						}.getAmount((int) (1))) == 5))) {
+						}.getAmount((int) (1)) == 5) {
 							if (entity instanceof ServerPlayerEntity) {
 								Container _current = ((ServerPlayerEntity) entity).openContainer;
 								if (_current instanceof Supplier) {
@@ -437,7 +438,7 @@ public class ClickedMergeProcedure {
 							}
 							if (entity instanceof LivingEntity)
 								((LivingEntity) entity).addPotionEffect(new EffectInstance(RadiationPotionEffect.potion, (int) 60, (int) 1));
-						} else if ((((new Object() {
+						} else if (new Object() {
 							public int getAmount(int sltid) {
 								if (entity instanceof ServerPlayerEntity) {
 									Container _current = ((ServerPlayerEntity) entity).openContainer;
@@ -452,7 +453,7 @@ public class ClickedMergeProcedure {
 								}
 								return 0;
 							}
-						}.getAmount((int) (0))) == 6) && ((new Object() {
+						}.getAmount((int) (0)) == 6 && new Object() {
 							public int getAmount(int sltid) {
 								if (entity instanceof ServerPlayerEntity) {
 									Container _current = ((ServerPlayerEntity) entity).openContainer;
@@ -467,7 +468,7 @@ public class ClickedMergeProcedure {
 								}
 								return 0;
 							}
-						}.getAmount((int) (1))) == 6))) {
+						}.getAmount((int) (1)) == 6) {
 							if (entity instanceof ServerPlayerEntity) {
 								Container _current = ((ServerPlayerEntity) entity).openContainer;
 								if (_current instanceof Supplier) {
@@ -502,7 +503,7 @@ public class ClickedMergeProcedure {
 							}
 							if (entity instanceof LivingEntity)
 								((LivingEntity) entity).addPotionEffect(new EffectInstance(RadiationPotionEffect.potion, (int) 60, (int) 1));
-						} else if ((((new Object() {
+						} else if (new Object() {
 							public int getAmount(int sltid) {
 								if (entity instanceof ServerPlayerEntity) {
 									Container _current = ((ServerPlayerEntity) entity).openContainer;
@@ -517,7 +518,7 @@ public class ClickedMergeProcedure {
 								}
 								return 0;
 							}
-						}.getAmount((int) (0))) == 7) && ((new Object() {
+						}.getAmount((int) (0)) == 7 && new Object() {
 							public int getAmount(int sltid) {
 								if (entity instanceof ServerPlayerEntity) {
 									Container _current = ((ServerPlayerEntity) entity).openContainer;
@@ -532,7 +533,7 @@ public class ClickedMergeProcedure {
 								}
 								return 0;
 							}
-						}.getAmount((int) (1))) == 7))) {
+						}.getAmount((int) (1)) == 7) {
 							if (entity instanceof ServerPlayerEntity) {
 								Container _current = ((ServerPlayerEntity) entity).openContainer;
 								if (_current instanceof Supplier) {
@@ -567,7 +568,7 @@ public class ClickedMergeProcedure {
 							}
 							if (entity instanceof LivingEntity)
 								((LivingEntity) entity).addPotionEffect(new EffectInstance(RadiationPotionEffect.potion, (int) 60, (int) 1));
-						} else if ((((new Object() {
+						} else if (new Object() {
 							public int getAmount(int sltid) {
 								if (entity instanceof ServerPlayerEntity) {
 									Container _current = ((ServerPlayerEntity) entity).openContainer;
@@ -582,7 +583,7 @@ public class ClickedMergeProcedure {
 								}
 								return 0;
 							}
-						}.getAmount((int) (0))) == 8) && ((new Object() {
+						}.getAmount((int) (0)) == 8 && new Object() {
 							public int getAmount(int sltid) {
 								if (entity instanceof ServerPlayerEntity) {
 									Container _current = ((ServerPlayerEntity) entity).openContainer;
@@ -597,7 +598,7 @@ public class ClickedMergeProcedure {
 								}
 								return 0;
 							}
-						}.getAmount((int) (1))) == 8))) {
+						}.getAmount((int) (1)) == 8) {
 							if (entity instanceof ServerPlayerEntity) {
 								Container _current = ((ServerPlayerEntity) entity).openContainer;
 								if (_current instanceof Supplier) {
@@ -632,7 +633,7 @@ public class ClickedMergeProcedure {
 							}
 							if (entity instanceof LivingEntity)
 								((LivingEntity) entity).addPotionEffect(new EffectInstance(RadiationPotionEffect.potion, (int) 60, (int) 1));
-						} else if ((((new Object() {
+						} else if (new Object() {
 							public int getAmount(int sltid) {
 								if (entity instanceof ServerPlayerEntity) {
 									Container _current = ((ServerPlayerEntity) entity).openContainer;
@@ -647,7 +648,7 @@ public class ClickedMergeProcedure {
 								}
 								return 0;
 							}
-						}.getAmount((int) (0))) == 9) && ((new Object() {
+						}.getAmount((int) (0)) == 9 && new Object() {
 							public int getAmount(int sltid) {
 								if (entity instanceof ServerPlayerEntity) {
 									Container _current = ((ServerPlayerEntity) entity).openContainer;
@@ -662,7 +663,7 @@ public class ClickedMergeProcedure {
 								}
 								return 0;
 							}
-						}.getAmount((int) (1))) == 9))) {
+						}.getAmount((int) (1)) == 9) {
 							if (entity instanceof ServerPlayerEntity) {
 								Container _current = ((ServerPlayerEntity) entity).openContainer;
 								if (_current instanceof Supplier) {
@@ -697,7 +698,7 @@ public class ClickedMergeProcedure {
 							}
 							if (entity instanceof LivingEntity)
 								((LivingEntity) entity).addPotionEffect(new EffectInstance(RadiationPotionEffect.potion, (int) 60, (int) 1));
-						} else if ((((new Object() {
+						} else if (new Object() {
 							public int getAmount(int sltid) {
 								if (entity instanceof ServerPlayerEntity) {
 									Container _current = ((ServerPlayerEntity) entity).openContainer;
@@ -712,7 +713,7 @@ public class ClickedMergeProcedure {
 								}
 								return 0;
 							}
-						}.getAmount((int) (0))) == 10) && ((new Object() {
+						}.getAmount((int) (0)) == 10 && new Object() {
 							public int getAmount(int sltid) {
 								if (entity instanceof ServerPlayerEntity) {
 									Container _current = ((ServerPlayerEntity) entity).openContainer;
@@ -727,7 +728,7 @@ public class ClickedMergeProcedure {
 								}
 								return 0;
 							}
-						}.getAmount((int) (1))) == 10))) {
+						}.getAmount((int) (1)) == 10) {
 							if (entity instanceof ServerPlayerEntity) {
 								Container _current = ((ServerPlayerEntity) entity).openContainer;
 								if (_current instanceof Supplier) {
@@ -762,7 +763,7 @@ public class ClickedMergeProcedure {
 							}
 							if (entity instanceof LivingEntity)
 								((LivingEntity) entity).addPotionEffect(new EffectInstance(RadiationPotionEffect.potion, (int) 60, (int) 1));
-						} else if ((((new Object() {
+						} else if (new Object() {
 							public int getAmount(int sltid) {
 								if (entity instanceof ServerPlayerEntity) {
 									Container _current = ((ServerPlayerEntity) entity).openContainer;
@@ -777,7 +778,7 @@ public class ClickedMergeProcedure {
 								}
 								return 0;
 							}
-						}.getAmount((int) (0))) == 11) && ((new Object() {
+						}.getAmount((int) (0)) == 11 && new Object() {
 							public int getAmount(int sltid) {
 								if (entity instanceof ServerPlayerEntity) {
 									Container _current = ((ServerPlayerEntity) entity).openContainer;
@@ -792,7 +793,7 @@ public class ClickedMergeProcedure {
 								}
 								return 0;
 							}
-						}.getAmount((int) (1))) == 11))) {
+						}.getAmount((int) (1)) == 11) {
 							if (entity instanceof ServerPlayerEntity) {
 								Container _current = ((ServerPlayerEntity) entity).openContainer;
 								if (_current instanceof Supplier) {
@@ -827,7 +828,7 @@ public class ClickedMergeProcedure {
 							}
 							if (entity instanceof LivingEntity)
 								((LivingEntity) entity).addPotionEffect(new EffectInstance(RadiationPotionEffect.potion, (int) 60, (int) 1));
-						} else if ((((new Object() {
+						} else if (new Object() {
 							public int getAmount(int sltid) {
 								if (entity instanceof ServerPlayerEntity) {
 									Container _current = ((ServerPlayerEntity) entity).openContainer;
@@ -842,7 +843,7 @@ public class ClickedMergeProcedure {
 								}
 								return 0;
 							}
-						}.getAmount((int) (0))) == 12) && ((new Object() {
+						}.getAmount((int) (0)) == 12 && new Object() {
 							public int getAmount(int sltid) {
 								if (entity instanceof ServerPlayerEntity) {
 									Container _current = ((ServerPlayerEntity) entity).openContainer;
@@ -857,7 +858,7 @@ public class ClickedMergeProcedure {
 								}
 								return 0;
 							}
-						}.getAmount((int) (1))) == 12))) {
+						}.getAmount((int) (1)) == 12) {
 							if (entity instanceof ServerPlayerEntity) {
 								Container _current = ((ServerPlayerEntity) entity).openContainer;
 								if (_current instanceof Supplier) {

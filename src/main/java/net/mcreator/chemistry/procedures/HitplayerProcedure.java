@@ -46,6 +46,7 @@ public class HitplayerProcedure {
 			}
 		}
 	}
+
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("entity") == null) {
 			if (!dependencies.containsKey("entity"))
@@ -59,12 +60,12 @@ public class HitplayerProcedure {
 		}
 		Entity entity = (Entity) dependencies.get("entity");
 		Entity sourceentity = (Entity) dependencies.get("sourceentity");
-		if (((EnchantmentHelper.getEnchantmentLevel(RadioactivedamageEnchantment.enchantment,
-				((sourceentity instanceof LivingEntity) ? ((LivingEntity) sourceentity).getHeldItemMainhand() : ItemStack.EMPTY)) != 0))) {
+		if ((EnchantmentHelper.getEnchantmentLevel(RadioactivedamageEnchantment.enchantment,
+				((sourceentity instanceof LivingEntity) ? ((LivingEntity) sourceentity).getHeldItemMainhand() : ItemStack.EMPTY)) != 0)) {
 			if (entity instanceof LivingEntity)
 				((LivingEntity) entity).addPotionEffect(new EffectInstance(RadiationPotionEffect.potion,
-						(int) ((EnchantmentHelper.getEnchantmentLevel(RadioactivedamageEnchantment.enchantment,
-								((sourceentity instanceof LivingEntity) ? ((LivingEntity) sourceentity).getHeldItemMainhand() : ItemStack.EMPTY)))
+						(int) (EnchantmentHelper.getEnchantmentLevel(RadioactivedamageEnchantment.enchantment,
+								((sourceentity instanceof LivingEntity) ? ((LivingEntity) sourceentity).getHeldItemMainhand() : ItemStack.EMPTY))
 								* 100),
 						(int) (EnchantmentHelper.getEnchantmentLevel(RadioactivedamageEnchantment.enchantment,
 								((sourceentity instanceof LivingEntity) ? ((LivingEntity) sourceentity).getHeldItemMainhand() : ItemStack.EMPTY))),

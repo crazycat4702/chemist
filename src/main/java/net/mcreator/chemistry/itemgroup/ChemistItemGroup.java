@@ -31,5 +31,6 @@ public class ChemistItemGroup extends ChemistryModElements.ModElement {
 			}
 		};
 	}
+
 	public static ItemGroup tab;
 }

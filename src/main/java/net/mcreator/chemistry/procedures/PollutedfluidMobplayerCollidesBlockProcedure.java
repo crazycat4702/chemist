@@ -12,6 +12,7 @@ import net.mcreator.chemistry.ChemistryMod;
 import java.util.Map;
 
 public class PollutedfluidMobplayerCollidesBlockProcedure {
+
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("entity") == null) {
 			if (!dependencies.containsKey("entity"))
@@ -19,7 +20,7 @@ public class PollutedfluidMobplayerCollidesBlockProcedure {
 			return;
 		}
 		Entity entity = (Entity) dependencies.get("entity");
-		if ((!(entity instanceof LivingEntity ? (((LivingEntity) entity).getCreatureAttribute() == CreatureAttribute.UNDEAD) : false))) {
+		if (!(entity instanceof LivingEntity ? (((LivingEntity) entity).getCreatureAttribute() == CreatureAttribute.UNDEAD) : false)) {
 			if (entity instanceof LivingEntity)
 				((LivingEntity) entity).addPotionEffect(new EffectInstance(RadiationPotionEffect.potion, (int) 6500, (int) 1));
 			entity.attackEntityFrom(DamageSource.MAGIC, (float) 1);

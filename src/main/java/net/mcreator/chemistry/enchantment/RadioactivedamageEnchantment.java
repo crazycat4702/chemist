@@ -13,6 +13,7 @@ import net.mcreator.chemistry.ChemistryModElements;
 public class RadioactivedamageEnchantment extends ChemistryModElements.ModElement {
 	@ObjectHolder("chemistry:radioactivedamage")
 	public static final Enchantment enchantment = null;
+
 	public RadioactivedamageEnchantment(ChemistryModElements instance) {
 		super(instance, 48);
 	}
@@ -21,6 +22,7 @@ public class RadioactivedamageEnchantment extends ChemistryModElements.ModElemen
 	public void initElements() {
 		elements.enchantments.add(() -> new CustomEnchantment(EquipmentSlotType.MAINHAND).setRegistryName("radioactivedamage"));
 	}
+
 	public static class CustomEnchantment extends Enchantment {
 		public CustomEnchantment(EquipmentSlotType... slots) {
 			super(Enchantment.Rarity.RARE, EnchantmentType.WEAPON, slots);

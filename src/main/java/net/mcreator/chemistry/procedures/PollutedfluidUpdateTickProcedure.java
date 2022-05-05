@@ -1,24 +1,23 @@
 package net.mcreator.chemistry.procedures;
 
 import net.minecraft.world.IWorld;
-import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.state.Property;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.Entity;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.BlockState;
 
+import net.mcreator.chemistry.world.DoPollutedFluidSpreadGameRule;
 import net.mcreator.chemistry.block.PollutedfluidBlock;
 import net.mcreator.chemistry.ChemistryMod;
 
 import java.util.Map;
 
 public class PollutedfluidUpdateTickProcedure {
+
 	public static void executeProcedure(Map<String, Object> dependencies) {
-		if (dependencies.get("entity") == null) {
-			if (!dependencies.containsKey("entity"))
-				ChemistryMod.LOGGER.warn("Failed to load dependency entity for procedure PollutedfluidUpdateTick!");
+		if (dependencies.get("world") == null) {
+			if (!dependencies.containsKey("world"))
+				ChemistryMod.LOGGER.warn("Failed to load dependency world for procedure PollutedfluidUpdateTick!");
 			return;
 		}
 		if (dependencies.get("x") == null) {
@@ -36,18 +35,12 @@ public class PollutedfluidUpdateTickProcedure {
 				ChemistryMod.LOGGER.warn("Failed to load dependency z for procedure PollutedfluidUpdateTick!");
 			return;
 		}
-		if (dependencies.get("world") == null) {
-			if (!dependencies.containsKey("world"))
-				ChemistryMod.LOGGER.warn("Failed to load dependency world for procedure PollutedfluidUpdateTick!");
-			return;
-		}
-		Entity entity = (Entity) dependencies.get("entity");
+		IWorld world = (IWorld) dependencies.get("world");
 		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
-		IWorld world = (IWorld) dependencies.get("world");
-		if (true) {
-			if (((world.getFluidState(new BlockPos((int) (x + 1), (int) (y + 1), (int) (z - 1))).getBlockState()).getBlock() == Blocks.WATER)) {
+		if (world.getWorldInfo().getGameRulesInstance().getBoolean(DoPollutedFluidSpreadGameRule.gamerule)) {
+			if ((world.getFluidState(new BlockPos((int) (x + 1), (int) (y + 1), (int) (z - 1))).getBlockState()).getBlock() == Blocks.WATER) {
 				{
 					BlockPos _bp = new BlockPos((int) (x + 1), (int) (y + 1), (int) (z - 1));
 					BlockState _bs = PollutedfluidBlock.block.getDefaultState();
@@ -62,7 +55,7 @@ public class PollutedfluidUpdateTickProcedure {
 					}
 					world.setBlockState(_bp, _bs, 3);
 				}
-			} else if (((world.getFluidState(new BlockPos((int) (x + 1), (int) (y + 1), (int) z)).getBlockState()).getBlock() == Blocks.WATER)) {
+			} else if ((world.getFluidState(new BlockPos((int) (x + 1), (int) (y + 1), (int) z)).getBlockState()).getBlock() == Blocks.WATER) {
 				{
 					BlockPos _bp = new BlockPos((int) (x + 1), (int) (y + 1), (int) z);
 					BlockState _bs = PollutedfluidBlock.block.getDefaultState();
@@ -77,8 +70,7 @@ public class PollutedfluidUpdateTickProcedure {
 					}
 					world.setBlockState(_bp, _bs, 3);
 				}
-			} else if (((world.getFluidState(new BlockPos((int) (x + 1), (int) (y + 1), (int) (z + 1))).getBlockState())
-					.getBlock() == Blocks.WATER)) {
+			} else if ((world.getFluidState(new BlockPos((int) (x + 1), (int) (y + 1), (int) (z + 1))).getBlockState()).getBlock() == Blocks.WATER) {
 				{
 					BlockPos _bp = new BlockPos((int) (x + 1), (int) (y + 1), (int) (z + 1));
 					BlockState _bs = PollutedfluidBlock.block.getDefaultState();
@@ -93,7 +85,7 @@ public class PollutedfluidUpdateTickProcedure {
 					}
 					world.setBlockState(_bp, _bs, 3);
 				}
-			} else if (((world.getFluidState(new BlockPos((int) x, (int) (y + 1), (int) (z - 1))).getBlockState()).getBlock() == Blocks.WATER)) {
+			} else if ((world.getFluidState(new BlockPos((int) x, (int) (y + 1), (int) (z - 1))).getBlockState()).getBlock() == Blocks.WATER) {
 				{
 					BlockPos _bp = new BlockPos((int) x, (int) (y + 1), (int) (z - 1));
 					BlockState _bs = PollutedfluidBlock.block.getDefaultState();
@@ -108,7 +100,7 @@ public class PollutedfluidUpdateTickProcedure {
 					}
 					world.setBlockState(_bp, _bs, 3);
 				}
-			} else if (((world.getFluidState(new BlockPos((int) x, (int) (y + 1), (int) z)).getBlockState()).getBlock() == Blocks.WATER)) {
+			} else if ((world.getFluidState(new BlockPos((int) x, (int) (y + 1), (int) z)).getBlockState()).getBlock() == Blocks.WATER) {
 				{
 					BlockPos _bp = new BlockPos((int) x, (int) (y + 1), (int) z);
 					BlockState _bs = PollutedfluidBlock.block.getDefaultState();
@@ -123,7 +115,7 @@ public class PollutedfluidUpdateTickProcedure {
 					}
 					world.setBlockState(_bp, _bs, 3);
 				}
-			} else if (((world.getFluidState(new BlockPos((int) x, (int) (y + 1), (int) (z + 1))).getBlockState()).getBlock() == Blocks.WATER)) {
+			} else if ((world.getFluidState(new BlockPos((int) x, (int) (y + 1), (int) (z + 1))).getBlockState()).getBlock() == Blocks.WATER) {
 				{
 					BlockPos _bp = new BlockPos((int) x, (int) (y + 1), (int) (z + 1));
 					BlockState _bs = PollutedfluidBlock.block.getDefaultState();
@@ -138,8 +130,7 @@ public class PollutedfluidUpdateTickProcedure {
 					}
 					world.setBlockState(_bp, _bs, 3);
 				}
-			} else if (((world.getFluidState(new BlockPos((int) (x - 1), (int) (y + 1), (int) (z - 1))).getBlockState())
-					.getBlock() == Blocks.WATER)) {
+			} else if ((world.getFluidState(new BlockPos((int) (x - 1), (int) (y + 1), (int) (z - 1))).getBlockState()).getBlock() == Blocks.WATER) {
 				{
 					BlockPos _bp = new BlockPos((int) (x - 1), (int) (y + 1), (int) (z - 1));
 					BlockState _bs = PollutedfluidBlock.block.getDefaultState();
@@ -154,7 +145,7 @@ public class PollutedfluidUpdateTickProcedure {
 					}
 					world.setBlockState(_bp, _bs, 3);
 				}
-			} else if (((world.getFluidState(new BlockPos((int) (x - 1), (int) (y + 1), (int) z)).getBlockState()).getBlock() == Blocks.WATER)) {
+			} else if ((world.getFluidState(new BlockPos((int) (x - 1), (int) (y + 1), (int) z)).getBlockState()).getBlock() == Blocks.WATER) {
 				{
 					BlockPos _bp = new BlockPos((int) (x - 1), (int) (y + 1), (int) z);
 					BlockState _bs = PollutedfluidBlock.block.getDefaultState();
@@ -169,8 +160,7 @@ public class PollutedfluidUpdateTickProcedure {
 					}
 					world.setBlockState(_bp, _bs, 3);
 				}
-			} else if (((world.getFluidState(new BlockPos((int) (x - 1), (int) (y + 1), (int) (z + 1))).getBlockState())
-					.getBlock() == Blocks.WATER)) {
+			} else if ((world.getFluidState(new BlockPos((int) (x - 1), (int) (y + 1), (int) (z + 1))).getBlockState()).getBlock() == Blocks.WATER) {
 				{
 					BlockPos _bp = new BlockPos((int) (x - 1), (int) (y + 1), (int) (z + 1));
 					BlockState _bs = PollutedfluidBlock.block.getDefaultState();
@@ -185,7 +175,7 @@ public class PollutedfluidUpdateTickProcedure {
 					}
 					world.setBlockState(_bp, _bs, 3);
 				}
-			} else if (((world.getFluidState(new BlockPos((int) (x + 1), (int) y, (int) (z - 1))).getBlockState()).getBlock() == Blocks.WATER)) {
+			} else if ((world.getFluidState(new BlockPos((int) (x + 1), (int) y, (int) (z - 1))).getBlockState()).getBlock() == Blocks.WATER) {
 				{
 					BlockPos _bp = new BlockPos((int) (x + 1), (int) y, (int) (z - 1));
 					BlockState _bs = PollutedfluidBlock.block.getDefaultState();
@@ -200,7 +190,7 @@ public class PollutedfluidUpdateTickProcedure {
 					}
 					world.setBlockState(_bp, _bs, 3);
 				}
-			} else if (((world.getFluidState(new BlockPos((int) (x + 1), (int) y, (int) z)).getBlockState()).getBlock() == Blocks.WATER)) {
+			} else if ((world.getFluidState(new BlockPos((int) (x + 1), (int) y, (int) z)).getBlockState()).getBlock() == Blocks.WATER) {
 				{
 					BlockPos _bp = new BlockPos((int) (x + 1), (int) y, (int) z);
 					BlockState _bs = PollutedfluidBlock.block.getDefaultState();
@@ -215,7 +205,7 @@ public class PollutedfluidUpdateTickProcedure {
 					}
 					world.setBlockState(_bp, _bs, 3);
 				}
-			} else if (((world.getFluidState(new BlockPos((int) (x + 1), (int) y, (int) (z + 1))).getBlockState()).getBlock() == Blocks.WATER)) {
+			} else if ((world.getFluidState(new BlockPos((int) (x + 1), (int) y, (int) (z + 1))).getBlockState()).getBlock() == Blocks.WATER) {
 				{
 					BlockPos _bp = new BlockPos((int) (x + 1), (int) y, (int) (z + 1));
 					BlockState _bs = PollutedfluidBlock.block.getDefaultState();
@@ -230,7 +220,7 @@ public class PollutedfluidUpdateTickProcedure {
 					}
 					world.setBlockState(_bp, _bs, 3);
 				}
-			} else if (((world.getFluidState(new BlockPos((int) x, (int) y, (int) (z - 1))).getBlockState()).getBlock() == Blocks.WATER)) {
+			} else if ((world.getFluidState(new BlockPos((int) x, (int) y, (int) (z - 1))).getBlockState()).getBlock() == Blocks.WATER) {
 				{
 					BlockPos _bp = new BlockPos((int) x, (int) y, (int) (z - 1));
 					BlockState _bs = PollutedfluidBlock.block.getDefaultState();
@@ -245,7 +235,7 @@ public class PollutedfluidUpdateTickProcedure {
 					}
 					world.setBlockState(_bp, _bs, 3);
 				}
-			} else if (((world.getFluidState(new BlockPos((int) x, (int) y, (int) (z + 1))).getBlockState()).getBlock() == Blocks.WATER)) {
+			} else if ((world.getFluidState(new BlockPos((int) x, (int) y, (int) (z + 1))).getBlockState()).getBlock() == Blocks.WATER) {
 				{
 					BlockPos _bp = new BlockPos((int) x, (int) y, (int) (z + 1));
 					BlockState _bs = PollutedfluidBlock.block.getDefaultState();
@@ -260,7 +250,7 @@ public class PollutedfluidUpdateTickProcedure {
 					}
 					world.setBlockState(_bp, _bs, 3);
 				}
-			} else if (((world.getFluidState(new BlockPos((int) (x - 1), (int) y, (int) (z - 1))).getBlockState()).getBlock() == Blocks.WATER)) {
+			} else if ((world.getFluidState(new BlockPos((int) (x - 1), (int) y, (int) (z - 1))).getBlockState()).getBlock() == Blocks.WATER) {
 				{
 					BlockPos _bp = new BlockPos((int) (x - 1), (int) y, (int) (z - 1));
 					BlockState _bs = PollutedfluidBlock.block.getDefaultState();
@@ -275,7 +265,7 @@ public class PollutedfluidUpdateTickProcedure {
 					}
 					world.setBlockState(_bp, _bs, 3);
 				}
-			} else if (((world.getFluidState(new BlockPos((int) (x - 1), (int) y, (int) z)).getBlockState()).getBlock() == Blocks.WATER)) {
+			} else if ((world.getFluidState(new BlockPos((int) (x - 1), (int) y, (int) z)).getBlockState()).getBlock() == Blocks.WATER) {
 				{
 					BlockPos _bp = new BlockPos((int) (x - 1), (int) y, (int) z);
 					BlockState _bs = PollutedfluidBlock.block.getDefaultState();
@@ -290,7 +280,7 @@ public class PollutedfluidUpdateTickProcedure {
 					}
 					world.setBlockState(_bp, _bs, 3);
 				}
-			} else if (((world.getFluidState(new BlockPos((int) (x - 1), (int) y, (int) (z + 1))).getBlockState()).getBlock() == Blocks.WATER)) {
+			} else if ((world.getFluidState(new BlockPos((int) (x - 1), (int) y, (int) (z + 1))).getBlockState()).getBlock() == Blocks.WATER) {
 				{
 					BlockPos _bp = new BlockPos((int) (x - 1), (int) y, (int) (z + 1));
 					BlockState _bs = PollutedfluidBlock.block.getDefaultState();
@@ -305,8 +295,7 @@ public class PollutedfluidUpdateTickProcedure {
 					}
 					world.setBlockState(_bp, _bs, 3);
 				}
-			} else if (((world.getFluidState(new BlockPos((int) (x + 1), (int) (y - 1), (int) (z - 1))).getBlockState())
-					.getBlock() == Blocks.WATER)) {
+			} else if ((world.getFluidState(new BlockPos((int) (x + 1), (int) (y - 1), (int) (z - 1))).getBlockState()).getBlock() == Blocks.WATER) {
 				{
 					BlockPos _bp = new BlockPos((int) (x + 1), (int) (y - 1), (int) (z - 1));
 					BlockState _bs = PollutedfluidBlock.block.getDefaultState();
@@ -321,7 +310,7 @@ public class PollutedfluidUpdateTickProcedure {
 					}
 					world.setBlockState(_bp, _bs, 3);
 				}
-			} else if (((world.getFluidState(new BlockPos((int) (x + 1), (int) (y - 1), (int) z)).getBlockState()).getBlock() == Blocks.WATER)) {
+			} else if ((world.getFluidState(new BlockPos((int) (x + 1), (int) (y - 1), (int) z)).getBlockState()).getBlock() == Blocks.WATER) {
 				{
 					BlockPos _bp = new BlockPos((int) (x + 1), (int) (y - 1), (int) z);
 					BlockState _bs = PollutedfluidBlock.block.getDefaultState();
@@ -336,8 +325,7 @@ public class PollutedfluidUpdateTickProcedure {
 					}
 					world.setBlockState(_bp, _bs, 3);
 				}
-			} else if (((world.getFluidState(new BlockPos((int) (x + 1), (int) (y - 1), (int) (z + 1))).getBlockState())
-					.getBlock() == Blocks.WATER)) {
+			} else if ((world.getFluidState(new BlockPos((int) (x + 1), (int) (y - 1), (int) (z + 1))).getBlockState()).getBlock() == Blocks.WATER) {
 				{
 					BlockPos _bp = new BlockPos((int) (x + 1), (int) (y - 1), (int) (z + 1));
 					BlockState _bs = PollutedfluidBlock.block.getDefaultState();
@@ -352,7 +340,7 @@ public class PollutedfluidUpdateTickProcedure {
 					}
 					world.setBlockState(_bp, _bs, 3);
 				}
-			} else if (((world.getFluidState(new BlockPos((int) x, (int) (y - 1), (int) (z - 1))).getBlockState()).getBlock() == Blocks.WATER)) {
+			} else if ((world.getFluidState(new BlockPos((int) x, (int) (y - 1), (int) (z - 1))).getBlockState()).getBlock() == Blocks.WATER) {
 				{
 					BlockPos _bp = new BlockPos((int) x, (int) (y - 1), (int) (z - 1));
 					BlockState _bs = PollutedfluidBlock.block.getDefaultState();
@@ -367,7 +355,7 @@ public class PollutedfluidUpdateTickProcedure {
 					}
 					world.setBlockState(_bp, _bs, 3);
 				}
-			} else if (((world.getFluidState(new BlockPos((int) x, (int) (y - 1), (int) z)).getBlockState()).getBlock() == Blocks.WATER)) {
+			} else if ((world.getFluidState(new BlockPos((int) x, (int) (y - 1), (int) z)).getBlockState()).getBlock() == Blocks.WATER) {
 				{
 					BlockPos _bp = new BlockPos((int) x, (int) (y - 1), (int) z);
 					BlockState _bs = PollutedfluidBlock.block.getDefaultState();
@@ -382,7 +370,7 @@ public class PollutedfluidUpdateTickProcedure {
 					}
 					world.setBlockState(_bp, _bs, 3);
 				}
-			} else if (((world.getFluidState(new BlockPos((int) x, (int) (y - 1), (int) (z + 1))).getBlockState()).getBlock() == Blocks.WATER)) {
+			} else if ((world.getFluidState(new BlockPos((int) x, (int) (y - 1), (int) (z + 1))).getBlockState()).getBlock() == Blocks.WATER) {
 				{
 					BlockPos _bp = new BlockPos((int) x, (int) (y - 1), (int) (z + 1));
 					BlockState _bs = PollutedfluidBlock.block.getDefaultState();
@@ -397,8 +385,7 @@ public class PollutedfluidUpdateTickProcedure {
 					}
 					world.setBlockState(_bp, _bs, 3);
 				}
-			} else if (((world.getFluidState(new BlockPos((int) (x - 1), (int) (y - 1), (int) (z - 1))).getBlockState())
-					.getBlock() == Blocks.WATER)) {
+			} else if ((world.getFluidState(new BlockPos((int) (x - 1), (int) (y - 1), (int) (z - 1))).getBlockState()).getBlock() == Blocks.WATER) {
 				{
 					BlockPos _bp = new BlockPos((int) (x - 1), (int) (y - 1), (int) (z - 1));
 					BlockState _bs = PollutedfluidBlock.block.getDefaultState();
@@ -413,7 +400,7 @@ public class PollutedfluidUpdateTickProcedure {
 					}
 					world.setBlockState(_bp, _bs, 3);
 				}
-			} else if (((world.getFluidState(new BlockPos((int) (x - 1), (int) (y - 1), (int) z)).getBlockState()).getBlock() == Blocks.WATER)) {
+			} else if ((world.getFluidState(new BlockPos((int) (x - 1), (int) (y - 1), (int) z)).getBlockState()).getBlock() == Blocks.WATER) {
 				{
 					BlockPos _bp = new BlockPos((int) (x - 1), (int) (y - 1), (int) z);
 					BlockState _bs = PollutedfluidBlock.block.getDefaultState();
@@ -428,11 +415,7 @@ public class PollutedfluidUpdateTickProcedure {
 					}
 					world.setBlockState(_bp, _bs, 3);
 				}
-			} else if (((world.getFluidState(new BlockPos((int) (x - 1), (int) (y - 1), (int) (z + 1))).getBlockState())
-					.getBlock() == Blocks.WATER)) {
-				if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-					((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("Message"), (false));
-				}
+			} else if ((world.getFluidState(new BlockPos((int) (x - 1), (int) (y - 1), (int) (z + 1))).getBlockState()).getBlock() == Blocks.WATER) {
 				{
 					BlockPos _bp = new BlockPos((int) (x - 1), (int) (y - 1), (int) (z + 1));
 					BlockState _bs = PollutedfluidBlock.block.getDefaultState();

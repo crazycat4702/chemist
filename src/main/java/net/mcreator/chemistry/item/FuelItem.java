@@ -15,6 +15,7 @@ import net.mcreator.chemistry.ChemistryModElements;
 public class FuelItem extends ChemistryModElements.ModElement {
 	@ObjectHolder("chemistry:fuel")
 	public static final Item block = null;
+
 	public FuelItem(ChemistryModElements instance) {
 		super(instance, 43);
 	}
@@ -23,6 +24,7 @@ public class FuelItem extends ChemistryModElements.ModElement {
 	public void initElements() {
 		elements.items.add(() -> new ItemCustom());
 	}
+
 	public static class ItemCustom extends Item {
 		public ItemCustom() {
 			super(new Item.Properties().group(ItemGroup.MISC).maxStackSize(64).rarity(Rarity.UNCOMMON));

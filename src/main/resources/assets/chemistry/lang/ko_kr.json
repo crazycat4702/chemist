@@ -43,5 +43,7 @@
   "item.chemistry.chemistry": "화학",
   "block.chemistry.carbon": "탄소",
   "item.chemistry.electron": "전자",
-  "item.minecraft.splash_potion.effect.radioactivepotion": "투척용 잔류형 물약"
+  "gamerule.doPollutedFluidSpread": "doPollutedFluidSpread",
+  "item.minecraft.splash_potion.effect.radioactivepotion": "투척용 잔류형 물약",
+  "gamerule.doPollutedFluidSpread.description": "This decide polluted fluid will spread or not."
 }

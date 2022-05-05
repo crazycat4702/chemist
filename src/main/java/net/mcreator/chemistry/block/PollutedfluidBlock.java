@@ -12,6 +12,7 @@ import net.minecraftforge.common.property.Properties;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.api.distmarker.Dist;
 
+import net.minecraft.world.server.ServerWorld;
 import net.minecraft.world.World;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IBlockDisplayReader;
@@ -37,13 +38,17 @@ import net.minecraft.block.FlowingFluidBlock;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Block;
 
+import net.mcreator.chemistry.procedures.PollutedfluidUpdateTickProcedure;
 import net.mcreator.chemistry.procedures.PollutedfluidMobplayerCollidesBlockProcedure;
 import net.mcreator.chemistry.particle.RadioactiveParticle;
 import net.mcreator.chemistry.ChemistryModElements;
 
+import java.util.stream.Stream;
 import java.util.function.BiFunction;
+import java.util.Random;
 import java.util.Map;
 import java.util.HashMap;
+import java.util.AbstractMap;
 
 @ChemistryModElements.ModElement.Tag
 public class PollutedfluidBlock extends ChemistryModElements.ModElement {
@@ -54,10 +59,12 @@ public class PollutedfluidBlock extends ChemistryModElements.ModElement {
 	public static FlowingFluid flowing = null;
 	public static FlowingFluid still = null;
 	private ForgeFlowingFluid.Properties fluidproperties = null;
+
 	public PollutedfluidBlock(ChemistryModElements instance) {
 		super(instance, 35);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new FluidRegisterHandler());
 	}
+
 	private static class FluidRegisterHandler {
 		@SubscribeEvent
 		public void registerFluids(RegistryEvent.Register<Fluid> event) {
@@ -65,6 +72,7 @@ public class PollutedfluidBlock extends ChemistryModElements.ModElement {
 			event.getRegistry().register(flowing);
 		}
 	}
+
 	@Override
 	@OnlyIn(Dist.CLIENT)
 	public void clientLoad(FMLClientSetupEvent event) {
@@ -77,9 +85,11 @@ public class PollutedfluidBlock extends ChemistryModElements.ModElement {
 		fluidproperties = new ForgeFlowingFluid.Properties(() -> still, () -> flowing,
 				CustomFluidAttributes
 						.builder(new ResourceLocation("chemistry:blocks/polluted_still"), new ResourceLocation("chemistry:blocks/polluted_flow"))
-						.luminosity(0).density(1000).viscosity(1000).temperature(300).rarity(Rarity.COMMON).color(-16448205))
-								.explosionResistance(100f).tickRate(4).levelDecreasePerBlock(1).slopeFindDistance(4).bucket(() -> bucket)
-								.block(() -> block);
+						.luminosity(0).density(1000).viscosity(1000).temperature(300)
+
+						.rarity(Rarity.COMMON).color(-16448205)).explosionResistance(100f)
+
+								.tickRate(4).levelDecreasePerBlock(1).slopeFindDistance(4).bucket(() -> bucket).block(() -> block);
 		still = (FlowingFluid) new CustomFlowingFluid.Source(fluidproperties).setRegistryName("pollutedfluid");
 		flowing = (FlowingFluid) new CustomFlowingFluid.Flowing(fluidproperties).setRegistryName("pollutedfluid_flowing");
 		elements.blocks
@@ -90,22 +100,44 @@ public class PollutedfluidBlock extends ChemistryModElements.ModElement {
 					}
 
 					@Override
+					public void onBlockAdded(BlockState blockstate, World world, BlockPos pos, BlockState oldState, boolean moving) {
+						super.onBlockAdded(blockstate, world, pos, oldState, moving);
+						int x = pos.getX();
+						int y = pos.getY();
+						int z = pos.getZ();
+						world.getPendingBlockTicks().scheduleTick(pos, this, 10);
+					}
+
+					@Override
+					public void tick(BlockState blockstate, ServerWorld world, BlockPos pos, Random random) {
+						super.tick(blockstate, world, pos, random);
+						int x = pos.getX();
+						int y = pos.getY();
+						int z = pos.getZ();
+
+						PollutedfluidUpdateTickProcedure.executeProcedure(Stream
+								.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x),
+										new AbstractMap.SimpleEntry<>("y", y), new AbstractMap.SimpleEntry<>("z", z))
+								.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+						world.getPendingBlockTicks().scheduleTick(pos, this, 10);
+					}
+
+					@Override
 					public void onEntityCollision(BlockState blockstate, World world, BlockPos pos, Entity entity) {
 						super.onEntityCollision(blockstate, world, pos, entity);
 						int x = pos.getX();
 						int y = pos.getY();
 						int z = pos.getZ();
-						{
-							Map<String, Object> $_dependencies = new HashMap<>();
-							$_dependencies.put("entity", entity);
-							PollutedfluidMobplayerCollidesBlockProcedure.executeProcedure($_dependencies);
-						}
+
+						PollutedfluidMobplayerCollidesBlockProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity))
+								.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 					}
 				}.setRegistryName("pollutedfluid"));
 		elements.items.add(() -> new BucketItem(still,
 				new Item.Properties().containerItem(Items.BUCKET).maxStackSize(1).group(ItemGroup.MISC).rarity(Rarity.COMMON))
 						.setRegistryName("pollutedfluid_bucket"));
 	}
+
 	public static abstract class CustomFlowingFluid extends ForgeFlowingFluid {
 		public CustomFlowingFluid(Properties properties) {
 			super(properties);
@@ -121,6 +153,7 @@ public class PollutedfluidBlock extends ChemistryModElements.ModElement {
 		public Vector3d getFlow(IBlockReader world, BlockPos pos, FluidState fluidstate) {
 			return super.getFlow(world, pos, fluidstate).scale(0.5);
 		}
+
 		public static class Source extends CustomFlowingFluid {
 			public Source(Properties properties) {
 				super(properties);
@@ -162,6 +195,7 @@ public class PollutedfluidBlock extends ChemistryModElements.ModElement {
 				super(stillTexture, flowingTexture, factory);
 			}
 		}
+
 		protected CustomFluidAttributes(CustomFluidAttributes.Builder builder, Fluid fluid) {
 			super(builder, fluid);
 		}

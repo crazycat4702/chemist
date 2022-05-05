@@ -25,6 +25,7 @@ import java.util.Collections;
 public class NatriumBlock extends ChemistryModElements.ModElement {
 	@ObjectHolder("chemistry:natrium")
 	public static final Block block = null;
+
 	public NatriumBlock(ChemistryModElements instance) {
 		super(instance, 39);
 	}
@@ -34,6 +35,7 @@ public class NatriumBlock extends ChemistryModElements.ModElement {
 		elements.blocks.add(() -> new CustomBlock());
 		elements.items.add(() -> new BlockItem(block, new Item.Properties().group(ElementItemGroup.tab)).setRegistryName(block.getRegistryName()));
 	}
+
 	public static class CustomBlock extends Block {
 		public CustomBlock() {
 			super(Block.Properties.create(Material.IRON).sound(SoundType.GLASS).hardnessAndResistance(1f, 10f).setLightLevel(s -> 0).harvestLevel(2)

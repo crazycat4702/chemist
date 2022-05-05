@@ -30,6 +30,7 @@ import java.util.function.Supplier;
 import java.util.Map;
 
 public class ClickedProcedure {
+
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("entity") == null) {
 			if (!dependencies.containsKey("entity"))
@@ -37,7 +38,7 @@ public class ClickedProcedure {
 			return;
 		}
 		Entity entity = (Entity) dependencies.get("entity");
-		if (((new Object() {
+		if ((new Object() {
 			public ItemStack getItemStack(int sltid) {
 				Entity _ent = entity;
 				if (_ent instanceof ServerPlayerEntity) {
@@ -51,7 +52,7 @@ public class ClickedProcedure {
 				}
 				return ItemStack.EMPTY;
 			}
-		}.getItemStack((int) (0))).getItem() == HydrogenBlock.block.asItem())) {
+		}.getItemStack((int) (0))).getItem() == HydrogenBlock.block.asItem()) {
 			{
 				Entity _ent = entity;
 				if (_ent instanceof ServerPlayerEntity) {
@@ -71,7 +72,7 @@ public class ClickedProcedure {
 					Object invobj = ((Supplier) _current).get();
 					if (invobj instanceof Map) {
 						ItemStack _setstack = new ItemStack(NucleusItem.block);
-						_setstack.setCount((int) ((new Object() {
+						_setstack.setCount((int) (new Object() {
 							public int getAmount(int sltid) {
 								if (entity instanceof ServerPlayerEntity) {
 									Container _current = ((ServerPlayerEntity) entity).openContainer;
@@ -86,7 +87,7 @@ public class ClickedProcedure {
 								}
 								return 0;
 							}
-						}.getAmount((int) (1))) + 1));
+						}.getAmount((int) (1)) + 1));
 						((Slot) ((Map) invobj).get((int) (1))).putStack(_setstack);
 						_current.detectAndSendChanges();
 					}
@@ -98,7 +99,7 @@ public class ClickedProcedure {
 					Object invobj = ((Supplier) _current).get();
 					if (invobj instanceof Map) {
 						ItemStack _setstack = new ItemStack(ElectronItem.block);
-						_setstack.setCount((int) ((new Object() {
+						_setstack.setCount((int) (new Object() {
 							public int getAmount(int sltid) {
 								if (entity instanceof ServerPlayerEntity) {
 									Container _current = ((ServerPlayerEntity) entity).openContainer;
@@ -113,7 +114,7 @@ public class ClickedProcedure {
 								}
 								return 0;
 							}
-						}.getAmount((int) (2))) + 1));
+						}.getAmount((int) (2)) + 1));
 						((Slot) ((Map) invobj).get((int) (2))).putStack(_setstack);
 						_current.detectAndSendChanges();
 					}
@@ -121,7 +122,7 @@ public class ClickedProcedure {
 			}
 			if (entity instanceof LivingEntity)
 				((LivingEntity) entity).addPotionEffect(new EffectInstance(RadiationPotionEffect.potion, (int) 60, (int) 3));
-		} else if (((new Object() {
+		} else if ((new Object() {
 			public ItemStack getItemStack(int sltid) {
 				Entity _ent = entity;
 				if (_ent instanceof ServerPlayerEntity) {
@@ -135,7 +136,7 @@ public class ClickedProcedure {
 				}
 				return ItemStack.EMPTY;
 			}
-		}.getItemStack((int) (0))).getItem() == HeliumBlock.block.asItem())) {
+		}.getItemStack((int) (0))).getItem() == HeliumBlock.block.asItem()) {
 			{
 				Entity _ent = entity;
 				if (_ent instanceof ServerPlayerEntity) {
@@ -155,7 +156,7 @@ public class ClickedProcedure {
 					Object invobj = ((Supplier) _current).get();
 					if (invobj instanceof Map) {
 						ItemStack _setstack = new ItemStack(NucleusItem.block);
-						_setstack.setCount((int) ((new Object() {
+						_setstack.setCount((int) (new Object() {
 							public int getAmount(int sltid) {
 								if (entity instanceof ServerPlayerEntity) {
 									Container _current = ((ServerPlayerEntity) entity).openContainer;
@@ -170,7 +171,7 @@ public class ClickedProcedure {
 								}
 								return 0;
 							}
-						}.getAmount((int) (1))) + 2));
+						}.getAmount((int) (1)) + 2));
 						((Slot) ((Map) invobj).get((int) (1))).putStack(_setstack);
 						_current.detectAndSendChanges();
 					}
@@ -182,7 +183,7 @@ public class ClickedProcedure {
 					Object invobj = ((Supplier) _current).get();
 					if (invobj instanceof Map) {
 						ItemStack _setstack = new ItemStack(ElectronItem.block);
-						_setstack.setCount((int) ((new Object() {
+						_setstack.setCount((int) (new Object() {
 							public int getAmount(int sltid) {
 								if (entity instanceof ServerPlayerEntity) {
 									Container _current = ((ServerPlayerEntity) entity).openContainer;
@@ -197,7 +198,7 @@ public class ClickedProcedure {
 								}
 								return 0;
 							}
-						}.getAmount((int) (2))) + 2));
+						}.getAmount((int) (2)) + 2));
 						((Slot) ((Map) invobj).get((int) (2))).putStack(_setstack);
 						_current.detectAndSendChanges();
 					}
@@ -205,7 +206,7 @@ public class ClickedProcedure {
 			}
 			if (entity instanceof LivingEntity)
 				((LivingEntity) entity).addPotionEffect(new EffectInstance(RadiationPotionEffect.potion, (int) 60, (int) 3));
-		} else if (((new Object() {
+		} else if ((new Object() {
 			public ItemStack getItemStack(int sltid) {
 				Entity _ent = entity;
 				if (_ent instanceof ServerPlayerEntity) {
@@ -219,7 +220,7 @@ public class ClickedProcedure {
 				}
 				return ItemStack.EMPTY;
 			}
-		}.getItemStack((int) (0))).getItem() == LithiumBlock.block.asItem())) {
+		}.getItemStack((int) (0))).getItem() == LithiumBlock.block.asItem()) {
 			{
 				Entity _ent = entity;
 				if (_ent instanceof ServerPlayerEntity) {
@@ -239,7 +240,7 @@ public class ClickedProcedure {
 					Object invobj = ((Supplier) _current).get();
 					if (invobj instanceof Map) {
 						ItemStack _setstack = new ItemStack(NucleusItem.block);
-						_setstack.setCount((int) ((new Object() {
+						_setstack.setCount((int) (new Object() {
 							public int getAmount(int sltid) {
 								if (entity instanceof ServerPlayerEntity) {
 									Container _current = ((ServerPlayerEntity) entity).openContainer;
@@ -254,7 +255,7 @@ public class ClickedProcedure {
 								}
 								return 0;
 							}
-						}.getAmount((int) (1))) + 3));
+						}.getAmount((int) (1)) + 3));
 						((Slot) ((Map) invobj).get((int) (1))).putStack(_setstack);
 						_current.detectAndSendChanges();
 					}
@@ -266,7 +267,7 @@ public class ClickedProcedure {
 					Object invobj = ((Supplier) _current).get();
 					if (invobj instanceof Map) {
 						ItemStack _setstack = new ItemStack(ElectronItem.block);
-						_setstack.setCount((int) ((new Object() {
+						_setstack.setCount((int) (new Object() {
 							public int getAmount(int sltid) {
 								if (entity instanceof ServerPlayerEntity) {
 									Container _current = ((ServerPlayerEntity) entity).openContainer;
@@ -281,7 +282,7 @@ public class ClickedProcedure {
 								}
 								return 0;
 							}
-						}.getAmount((int) (2))) + 3));
+						}.getAmount((int) (2)) + 3));
 						((Slot) ((Map) invobj).get((int) (2))).putStack(_setstack);
 						_current.detectAndSendChanges();
 					}
@@ -289,7 +290,7 @@ public class ClickedProcedure {
 			}
 			if (entity instanceof LivingEntity)
 				((LivingEntity) entity).addPotionEffect(new EffectInstance(RadiationPotionEffect.potion, (int) 60, (int) 3));
-		} else if (((new Object() {
+		} else if ((new Object() {
 			public ItemStack getItemStack(int sltid) {
 				Entity _ent = entity;
 				if (_ent instanceof ServerPlayerEntity) {
@@ -303,7 +304,7 @@ public class ClickedProcedure {
 				}
 				return ItemStack.EMPTY;
 			}
-		}.getItemStack((int) (0))).getItem() == BerylliumBlock.block.asItem())) {
+		}.getItemStack((int) (0))).getItem() == BerylliumBlock.block.asItem()) {
 			{
 				Entity _ent = entity;
 				if (_ent instanceof ServerPlayerEntity) {
@@ -323,7 +324,7 @@ public class ClickedProcedure {
 					Object invobj = ((Supplier) _current).get();
 					if (invobj instanceof Map) {
 						ItemStack _setstack = new ItemStack(NucleusItem.block);
-						_setstack.setCount((int) ((new Object() {
+						_setstack.setCount((int) (new Object() {
 							public int getAmount(int sltid) {
 								if (entity instanceof ServerPlayerEntity) {
 									Container _current = ((ServerPlayerEntity) entity).openContainer;
@@ -338,7 +339,7 @@ public class ClickedProcedure {
 								}
 								return 0;
 							}
-						}.getAmount((int) (1))) + 4));
+						}.getAmount((int) (1)) + 4));
 						((Slot) ((Map) invobj).get((int) (1))).putStack(_setstack);
 						_current.detectAndSendChanges();
 					}
@@ -350,7 +351,7 @@ public class ClickedProcedure {
 					Object invobj = ((Supplier) _current).get();
 					if (invobj instanceof Map) {
 						ItemStack _setstack = new ItemStack(ElectronItem.block);
-						_setstack.setCount((int) ((new Object() {
+						_setstack.setCount((int) (new Object() {
 							public int getAmount(int sltid) {
 								if (entity instanceof ServerPlayerEntity) {
 									Container _current = ((ServerPlayerEntity) entity).openContainer;
@@ -365,7 +366,7 @@ public class ClickedProcedure {
 								}
 								return 0;
 							}
-						}.getAmount((int) (2))) + 4));
+						}.getAmount((int) (2)) + 4));
 						((Slot) ((Map) invobj).get((int) (2))).putStack(_setstack);
 						_current.detectAndSendChanges();
 					}
@@ -373,7 +374,7 @@ public class ClickedProcedure {
 			}
 			if (entity instanceof LivingEntity)
 				((LivingEntity) entity).addPotionEffect(new EffectInstance(RadiationPotionEffect.potion, (int) 60, (int) 3));
-		} else if (((new Object() {
+		} else if ((new Object() {
 			public ItemStack getItemStack(int sltid) {
 				Entity _ent = entity;
 				if (_ent instanceof ServerPlayerEntity) {
@@ -387,7 +388,7 @@ public class ClickedProcedure {
 				}
 				return ItemStack.EMPTY;
 			}
-		}.getItemStack((int) (0))).getItem() == BoronBlock.block.asItem())) {
+		}.getItemStack((int) (0))).getItem() == BoronBlock.block.asItem()) {
 			{
 				Entity _ent = entity;
 				if (_ent instanceof ServerPlayerEntity) {
@@ -407,7 +408,7 @@ public class ClickedProcedure {
 					Object invobj = ((Supplier) _current).get();
 					if (invobj instanceof Map) {
 						ItemStack _setstack = new ItemStack(NucleusItem.block);
-						_setstack.setCount((int) ((new Object() {
+						_setstack.setCount((int) (new Object() {
 							public int getAmount(int sltid) {
 								if (entity instanceof ServerPlayerEntity) {
 									Container _current = ((ServerPlayerEntity) entity).openContainer;
@@ -422,7 +423,7 @@ public class ClickedProcedure {
 								}
 								return 0;
 							}
-						}.getAmount((int) (1))) + 5));
+						}.getAmount((int) (1)) + 5));
 						((Slot) ((Map) invobj).get((int) (1))).putStack(_setstack);
 						_current.detectAndSendChanges();
 					}
@@ -434,7 +435,7 @@ public class ClickedProcedure {
 					Object invobj = ((Supplier) _current).get();
 					if (invobj instanceof Map) {
 						ItemStack _setstack = new ItemStack(ElectronItem.block);
-						_setstack.setCount((int) ((new Object() {
+						_setstack.setCount((int) (new Object() {
 							public int getAmount(int sltid) {
 								if (entity instanceof ServerPlayerEntity) {
 									Container _current = ((ServerPlayerEntity) entity).openContainer;
@@ -449,7 +450,7 @@ public class ClickedProcedure {
 								}
 								return 0;
 							}
-						}.getAmount((int) (2))) + 5));
+						}.getAmount((int) (2)) + 5));
 						((Slot) ((Map) invobj).get((int) (2))).putStack(_setstack);
 						_current.detectAndSendChanges();
 					}
@@ -457,7 +458,7 @@ public class ClickedProcedure {
 			}
 			if (entity instanceof LivingEntity)
 				((LivingEntity) entity).addPotionEffect(new EffectInstance(RadiationPotionEffect.potion, (int) 60, (int) 3));
-		} else if (((new Object() {
+		} else if ((new Object() {
 			public ItemStack getItemStack(int sltid) {
 				Entity _ent = entity;
 				if (_ent instanceof ServerPlayerEntity) {
@@ -471,7 +472,7 @@ public class ClickedProcedure {
 				}
 				return ItemStack.EMPTY;
 			}
-		}.getItemStack((int) (0))).getItem() == CarbonBlock.block.asItem())) {
+		}.getItemStack((int) (0))).getItem() == CarbonBlock.block.asItem()) {
 			{
 				Entity _ent = entity;
 				if (_ent instanceof ServerPlayerEntity) {
@@ -491,7 +492,7 @@ public class ClickedProcedure {
 					Object invobj = ((Supplier) _current).get();
 					if (invobj instanceof Map) {
 						ItemStack _setstack = new ItemStack(NucleusItem.block);
-						_setstack.setCount((int) ((new Object() {
+						_setstack.setCount((int) (new Object() {
 							public int getAmount(int sltid) {
 								if (entity instanceof ServerPlayerEntity) {
 									Container _current = ((ServerPlayerEntity) entity).openContainer;
@@ -506,7 +507,7 @@ public class ClickedProcedure {
 								}
 								return 0;
 							}
-						}.getAmount((int) (1))) + 6));
+						}.getAmount((int) (1)) + 6));
 						((Slot) ((Map) invobj).get((int) (1))).putStack(_setstack);
 						_current.detectAndSendChanges();
 					}
@@ -518,7 +519,7 @@ public class ClickedProcedure {
 					Object invobj = ((Supplier) _current).get();
 					if (invobj instanceof Map) {
 						ItemStack _setstack = new ItemStack(ElectronItem.block);
-						_setstack.setCount((int) ((new Object() {
+						_setstack.setCount((int) (new Object() {
 							public int getAmount(int sltid) {
 								if (entity instanceof ServerPlayerEntity) {
 									Container _current = ((ServerPlayerEntity) entity).openContainer;
@@ -533,7 +534,7 @@ public class ClickedProcedure {
 								}
 								return 0;
 							}
-						}.getAmount((int) (2))) + 6));
+						}.getAmount((int) (2)) + 6));
 						((Slot) ((Map) invobj).get((int) (2))).putStack(_setstack);
 						_current.detectAndSendChanges();
 					}
@@ -541,7 +542,7 @@ public class ClickedProcedure {
 			}
 			if (entity instanceof LivingEntity)
 				((LivingEntity) entity).addPotionEffect(new EffectInstance(RadiationPotionEffect.potion, (int) 60, (int) 3));
-		} else if (((new Object() {
+		} else if ((new Object() {
 			public ItemStack getItemStack(int sltid) {
 				Entity _ent = entity;
 				if (_ent instanceof ServerPlayerEntity) {
@@ -555,7 +556,7 @@ public class ClickedProcedure {
 				}
 				return ItemStack.EMPTY;
 			}
-		}.getItemStack((int) (0))).getItem() == NitrogenBlock.block.asItem())) {
+		}.getItemStack((int) (0))).getItem() == NitrogenBlock.block.asItem()) {
 			{
 				Entity _ent = entity;
 				if (_ent instanceof ServerPlayerEntity) {
@@ -575,7 +576,7 @@ public class ClickedProcedure {
 					Object invobj = ((Supplier) _current).get();
 					if (invobj instanceof Map) {
 						ItemStack _setstack = new ItemStack(NucleusItem.block);
-						_setstack.setCount((int) ((new Object() {
+						_setstack.setCount((int) (new Object() {
 							public int getAmount(int sltid) {
 								if (entity instanceof ServerPlayerEntity) {
 									Container _current = ((ServerPlayerEntity) entity).openContainer;
@@ -590,7 +591,7 @@ public class ClickedProcedure {
 								}
 								return 0;
 							}
-						}.getAmount((int) (1))) + 7));
+						}.getAmount((int) (1)) + 7));
 						((Slot) ((Map) invobj).get((int) (1))).putStack(_setstack);
 						_current.detectAndSendChanges();
 					}
@@ -602,7 +603,7 @@ public class ClickedProcedure {
 					Object invobj = ((Supplier) _current).get();
 					if (invobj instanceof Map) {
 						ItemStack _setstack = new ItemStack(ElectronItem.block);
-						_setstack.setCount((int) ((new Object() {
+						_setstack.setCount((int) (new Object() {
 							public int getAmount(int sltid) {
 								if (entity instanceof ServerPlayerEntity) {
 									Container _current = ((ServerPlayerEntity) entity).openContainer;
@@ -617,7 +618,7 @@ public class ClickedProcedure {
 								}
 								return 0;
 							}
-						}.getAmount((int) (2))) + 7));
+						}.getAmount((int) (2)) + 7));
 						((Slot) ((Map) invobj).get((int) (2))).putStack(_setstack);
 						_current.detectAndSendChanges();
 					}
@@ -625,7 +626,7 @@ public class ClickedProcedure {
 			}
 			if (entity instanceof LivingEntity)
 				((LivingEntity) entity).addPotionEffect(new EffectInstance(RadiationPotionEffect.potion, (int) 60, (int) 3));
-		} else if (((new Object() {
+		} else if ((new Object() {
 			public ItemStack getItemStack(int sltid) {
 				Entity _ent = entity;
 				if (_ent instanceof ServerPlayerEntity) {
@@ -639,7 +640,7 @@ public class ClickedProcedure {
 				}
 				return ItemStack.EMPTY;
 			}
-		}.getItemStack((int) (0))).getItem() == OxygenBlock.block.asItem())) {
+		}.getItemStack((int) (0))).getItem() == OxygenBlock.block.asItem()) {
 			{
 				Entity _ent = entity;
 				if (_ent instanceof ServerPlayerEntity) {
@@ -659,7 +660,7 @@ public class ClickedProcedure {
 					Object invobj = ((Supplier) _current).get();
 					if (invobj instanceof Map) {
 						ItemStack _setstack = new ItemStack(NucleusItem.block);
-						_setstack.setCount((int) ((new Object() {
+						_setstack.setCount((int) (new Object() {
 							public int getAmount(int sltid) {
 								if (entity instanceof ServerPlayerEntity) {
 									Container _current = ((ServerPlayerEntity) entity).openContainer;
@@ -674,7 +675,7 @@ public class ClickedProcedure {
 								}
 								return 0;
 							}
-						}.getAmount((int) (1))) + 8));
+						}.getAmount((int) (1)) + 8));
 						((Slot) ((Map) invobj).get((int) (1))).putStack(_setstack);
 						_current.detectAndSendChanges();
 					}
@@ -686,7 +687,7 @@ public class ClickedProcedure {
 					Object invobj = ((Supplier) _current).get();
 					if (invobj instanceof Map) {
 						ItemStack _setstack = new ItemStack(ElectronItem.block);
-						_setstack.setCount((int) ((new Object() {
+						_setstack.setCount((int) (new Object() {
 							public int getAmount(int sltid) {
 								if (entity instanceof ServerPlayerEntity) {
 									Container _current = ((ServerPlayerEntity) entity).openContainer;
@@ -701,7 +702,7 @@ public class ClickedProcedure {
 								}
 								return 0;
 							}
-						}.getAmount((int) (2))) + 8));
+						}.getAmount((int) (2)) + 8));
 						((Slot) ((Map) invobj).get((int) (2))).putStack(_setstack);
 						_current.detectAndSendChanges();
 					}
@@ -709,7 +710,7 @@ public class ClickedProcedure {
 			}
 			if (entity instanceof LivingEntity)
 				((LivingEntity) entity).addPotionEffect(new EffectInstance(RadiationPotionEffect.potion, (int) 60, (int) 3));
-		} else if (((new Object() {
+		} else if ((new Object() {
 			public ItemStack getItemStack(int sltid) {
 				Entity _ent = entity;
 				if (_ent instanceof ServerPlayerEntity) {
@@ -723,7 +724,7 @@ public class ClickedProcedure {
 				}
 				return ItemStack.EMPTY;
 			}
-		}.getItemStack((int) (0))).getItem() == FluorineBlock.block.asItem())) {
+		}.getItemStack((int) (0))).getItem() == FluorineBlock.block.asItem()) {
 			{
 				Entity _ent = entity;
 				if (_ent instanceof ServerPlayerEntity) {
@@ -743,7 +744,7 @@ public class ClickedProcedure {
 					Object invobj = ((Supplier) _current).get();
 					if (invobj instanceof Map) {
 						ItemStack _setstack = new ItemStack(NucleusItem.block);
-						_setstack.setCount((int) ((new Object() {
+						_setstack.setCount((int) (new Object() {
 							public int getAmount(int sltid) {
 								if (entity instanceof ServerPlayerEntity) {
 									Container _current = ((ServerPlayerEntity) entity).openContainer;
@@ -758,7 +759,7 @@ public class ClickedProcedure {
 								}
 								return 0;
 							}
-						}.getAmount((int) (1))) + 9));
+						}.getAmount((int) (1)) + 9));
 						((Slot) ((Map) invobj).get((int) (1))).putStack(_setstack);
 						_current.detectAndSendChanges();
 					}
@@ -770,7 +771,7 @@ public class ClickedProcedure {
 					Object invobj = ((Supplier) _current).get();
 					if (invobj instanceof Map) {
 						ItemStack _setstack = new ItemStack(ElectronItem.block);
-						_setstack.setCount((int) ((new Object() {
+						_setstack.setCount((int) (new Object() {
 							public int getAmount(int sltid) {
 								if (entity instanceof ServerPlayerEntity) {
 									Container _current = ((ServerPlayerEntity) entity).openContainer;
@@ -785,7 +786,7 @@ public class ClickedProcedure {
 								}
 								return 0;
 							}
-						}.getAmount((int) (2))) + 9));
+						}.getAmount((int) (2)) + 9));
 						((Slot) ((Map) invobj).get((int) (2))).putStack(_setstack);
 						_current.detectAndSendChanges();
 					}
@@ -793,7 +794,7 @@ public class ClickedProcedure {
 			}
 			if (entity instanceof LivingEntity)
 				((LivingEntity) entity).addPotionEffect(new EffectInstance(RadiationPotionEffect.potion, (int) 60, (int) 3));
-		} else if (((new Object() {
+		} else if ((new Object() {
 			public ItemStack getItemStack(int sltid) {
 				Entity _ent = entity;
 				if (_ent instanceof ServerPlayerEntity) {
@@ -807,7 +808,7 @@ public class ClickedProcedure {
 				}
 				return ItemStack.EMPTY;
 			}
-		}.getItemStack((int) (0))).getItem() == NeonBlock.block.asItem())) {
+		}.getItemStack((int) (0))).getItem() == NeonBlock.block.asItem()) {
 			{
 				Entity _ent = entity;
 				if (_ent instanceof ServerPlayerEntity) {
@@ -827,7 +828,7 @@ public class ClickedProcedure {
 					Object invobj = ((Supplier) _current).get();
 					if (invobj instanceof Map) {
 						ItemStack _setstack = new ItemStack(NucleusItem.block);
-						_setstack.setCount((int) ((new Object() {
+						_setstack.setCount((int) (new Object() {
 							public int getAmount(int sltid) {
 								if (entity instanceof ServerPlayerEntity) {
 									Container _current = ((ServerPlayerEntity) entity).openContainer;
@@ -842,7 +843,7 @@ public class ClickedProcedure {
 								}
 								return 0;
 							}
-						}.getAmount((int) (1))) + 10));
+						}.getAmount((int) (1)) + 10));
 						((Slot) ((Map) invobj).get((int) (1))).putStack(_setstack);
 						_current.detectAndSendChanges();
 					}
@@ -854,7 +855,7 @@ public class ClickedProcedure {
 					Object invobj = ((Supplier) _current).get();
 					if (invobj instanceof Map) {
 						ItemStack _setstack = new ItemStack(ElectronItem.block);
-						_setstack.setCount((int) ((new Object() {
+						_setstack.setCount((int) (new Object() {
 							public int getAmount(int sltid) {
 								if (entity instanceof ServerPlayerEntity) {
 									Container _current = ((ServerPlayerEntity) entity).openContainer;
@@ -869,7 +870,7 @@ public class ClickedProcedure {
 								}
 								return 0;
 							}
-						}.getAmount((int) (2))) + 10));
+						}.getAmount((int) (2)) + 10));
 						((Slot) ((Map) invobj).get((int) (2))).putStack(_setstack);
 						_current.detectAndSendChanges();
 					}
@@ -877,7 +878,7 @@ public class ClickedProcedure {
 			}
 			if (entity instanceof LivingEntity)
 				((LivingEntity) entity).addPotionEffect(new EffectInstance(RadiationPotionEffect.potion, (int) 60, (int) 3));
-		} else if (((new Object() {
+		} else if ((new Object() {
 			public ItemStack getItemStack(int sltid) {
 				Entity _ent = entity;
 				if (_ent instanceof ServerPlayerEntity) {
@@ -891,7 +892,7 @@ public class ClickedProcedure {
 				}
 				return ItemStack.EMPTY;
 			}
-		}.getItemStack((int) (0))).getItem() == NatriumBlock.block.asItem())) {
+		}.getItemStack((int) (0))).getItem() == NatriumBlock.block.asItem()) {
 			{
 				Entity _ent = entity;
 				if (_ent instanceof ServerPlayerEntity) {
@@ -911,7 +912,7 @@ public class ClickedProcedure {
 					Object invobj = ((Supplier) _current).get();
 					if (invobj instanceof Map) {
 						ItemStack _setstack = new ItemStack(NucleusItem.block);
-						_setstack.setCount((int) ((new Object() {
+						_setstack.setCount((int) (new Object() {
 							public int getAmount(int sltid) {
 								if (entity instanceof ServerPlayerEntity) {
 									Container _current = ((ServerPlayerEntity) entity).openContainer;
@@ -926,7 +927,7 @@ public class ClickedProcedure {
 								}
 								return 0;
 							}
-						}.getAmount((int) (1))) + 11));
+						}.getAmount((int) (1)) + 11));
 						((Slot) ((Map) invobj).get((int) (1))).putStack(_setstack);
 						_current.detectAndSendChanges();
 					}
@@ -938,7 +939,7 @@ public class ClickedProcedure {
 					Object invobj = ((Supplier) _current).get();
 					if (invobj instanceof Map) {
 						ItemStack _setstack = new ItemStack(ElectronItem.block);
-						_setstack.setCount((int) ((new Object() {
+						_setstack.setCount((int) (new Object() {
 							public int getAmount(int sltid) {
 								if (entity instanceof ServerPlayerEntity) {
 									Container _current = ((ServerPlayerEntity) entity).openContainer;
@@ -953,7 +954,7 @@ public class ClickedProcedure {
 								}
 								return 0;
 							}
-						}.getAmount((int) (2))) + 11));
+						}.getAmount((int) (2)) + 11));
 						((Slot) ((Map) invobj).get((int) (2))).putStack(_setstack);
 						_current.detectAndSendChanges();
 					}
@@ -961,7 +962,7 @@ public class ClickedProcedure {
 			}
 			if (entity instanceof LivingEntity)
 				((LivingEntity) entity).addPotionEffect(new EffectInstance(RadiationPotionEffect.potion, (int) 60, (int) 3));
-		} else if (((new Object() {
+		} else if ((new Object() {
 			public ItemStack getItemStack(int sltid) {
 				Entity _ent = entity;
 				if (_ent instanceof ServerPlayerEntity) {
@@ -975,7 +976,7 @@ public class ClickedProcedure {
 				}
 				return ItemStack.EMPTY;
 			}
-		}.getItemStack((int) (0))).getItem() == MagnesiumBlock.block.asItem())) {
+		}.getItemStack((int) (0))).getItem() == MagnesiumBlock.block.asItem()) {
 			{
 				Entity _ent = entity;
 				if (_ent instanceof ServerPlayerEntity) {
@@ -995,7 +996,7 @@ public class ClickedProcedure {
 					Object invobj = ((Supplier) _current).get();
 					if (invobj instanceof Map) {
 						ItemStack _setstack = new ItemStack(NucleusItem.block);
-						_setstack.setCount((int) ((new Object() {
+						_setstack.setCount((int) (new Object() {
 							public int getAmount(int sltid) {
 								if (entity instanceof ServerPlayerEntity) {
 									Container _current = ((ServerPlayerEntity) entity).openContainer;
@@ -1010,7 +1011,7 @@ public class ClickedProcedure {
 								}
 								return 0;
 							}
-						}.getAmount((int) (1))) + 12));
+						}.getAmount((int) (1)) + 12));
 						((Slot) ((Map) invobj).get((int) (1))).putStack(_setstack);
 						_current.detectAndSendChanges();
 					}
@@ -1022,7 +1023,7 @@ public class ClickedProcedure {
 					Object invobj = ((Supplier) _current).get();
 					if (invobj instanceof Map) {
 						ItemStack _setstack = new ItemStack(ElectronItem.block);
-						_setstack.setCount((int) ((new Object() {
+						_setstack.setCount((int) (new Object() {
 							public int getAmount(int sltid) {
 								if (entity instanceof ServerPlayerEntity) {
 									Container _current = ((ServerPlayerEntity) entity).openContainer;
@@ -1037,7 +1038,7 @@ public class ClickedProcedure {
 								}
 								return 0;
 							}
-						}.getAmount((int) (2))) + 12));
+						}.getAmount((int) (2)) + 12));
 						((Slot) ((Map) invobj).get((int) (2))).putStack(_setstack);
 						_current.detectAndSendChanges();
 					}

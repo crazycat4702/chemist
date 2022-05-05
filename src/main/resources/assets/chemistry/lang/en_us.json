@@ -6,7 +6,7 @@
   "itemGroup.tabchemist": "Chemist",
   "block.chemistry.lithium": "Lithium",
   "block.chemistry.hydrogen": "Hydrogen",
-  "item.chemistry.radiationprotectionsuit_boots": "Radiation Protectionsuit Boots",
+  "item.chemistry.radiationprotectionsuit_boots": "Radiationprotectionsuit Boots",
   "item.chemistry.nucleus": "Nucleus",
   "fluid.chemistry.pollutedfluid": "Pollutedfluid",
   "block.chemistry.atom_merger": "Atom Merger",
@@ -16,8 +16,8 @@
   "advancements.chemic.descr": "Get into chemist land",
   "block.chemistry.atom_collapser": "Atom Collapser",
   "item.chemistry.chemical_blaze_spawn_egg": "Chemical Blaze Spawn Egg",
-  "item.chemistry.radiationprotectionsuit_helmet": "Radiation Protectionsuit Helmet",
-  "item.chemistry.radiationprotectionsuit_leggings": "Radiation Protectionsuit Leggings",
+  "item.chemistry.radiationprotectionsuit_helmet": "Radiationprotectionsuit Helmet",
+  "item.chemistry.radiationprotectionsuit_leggings": "Radiationprotectionsuit Leggings",
   "block.chemistry.nitrogen": "Nitrogen",
   "advancements.chemic.title": "Chemic",
   "item.chemistry.pollutedfluid_bucket": "Pollutedfluid Bucket",
@@ -33,7 +33,7 @@
   "effect.radiation": "Radiation",
   "item.minecraft.lingering_potion.effect.radioactivepotion": "Lingering Potion of Radioactive",
   "block.chemistry.oxygen": "Oxygen",
-  "item.chemistry.radiationprotectionsuit_chestplate": "Radiation Protectionsuit Chestplate",
+  "item.chemistry.radiationprotectionsuit_chestplate": "Radiationprotectionsuit Body",
   "block.chemistry.magnesium": "Magnesium",
   "block.chemistry.natrium": "Natrium",
   "entity.chemistry.chemical_blaze": "Chemical Blaze",
@@ -43,5 +43,7 @@
   "item.chemistry.chemistry": "Chemist",
   "block.chemistry.carbon": "Carbon",
   "item.chemistry.electron": "Electron",
-  "item.minecraft.splash_potion.effect.radioactivepotion": "Splash Potion of Radioactive"
+  "gamerule.doPollutedFluidSpread": "doPollutedFluidSpread",
+  "item.minecraft.splash_potion.effect.radioactivepotion": "Splash Potion of Radioactive",
+  "gamerule.doPollutedFluidSpread.description": "This decide polluted fluid will spread or not."
 }

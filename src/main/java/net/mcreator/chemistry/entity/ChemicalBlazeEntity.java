@@ -38,15 +38,18 @@ import net.mcreator.chemistry.item.FuelItem;
 import net.mcreator.chemistry.entity.renderer.ChemicalBlazeRenderer;
 import net.mcreator.chemistry.ChemistryModElements;
 
+import java.util.stream.Stream;
 import java.util.Random;
 import java.util.Map;
 import java.util.HashMap;
+import java.util.AbstractMap;
 
 @ChemistryModElements.ModElement.Tag
 public class ChemicalBlazeEntity extends ChemistryModElements.ModElement {
 	public static EntityType entity = (EntityType.Builder.<CustomEntity>create(CustomEntity::new, EntityClassification.MONSTER)
 			.setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(CustomEntity::new).immuneToFire()
 			.size(0.6f, 1.8f)).build("chemical_blaze").setRegistryName("chemical_blaze");
+
 	public ChemicalBlazeEntity(ChemistryModElements instance) {
 		super(instance, 43);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new ChemicalBlazeRenderer.ModelRegisterHandler());
@@ -63,6 +66,7 @@ public class ChemicalBlazeEntity extends ChemistryModElements.ModElement {
 	@Override
 	public void init(FMLCommonSetupEvent event) {
 	}
+
 	private static class EntityAttributesRegisterHandler {
 		@SubscribeEvent
 		public void onEntityAttributeCreation(EntityAttributeCreationEvent event) {
@@ -140,14 +144,11 @@ public class ChemicalBlazeEntity extends ChemistryModElements.ModElement {
 			double y = this.getPosY();
 			double z = this.getPosZ();
 			Entity entity = this;
-			{
-				Map<String, Object> $_dependencies = new HashMap<>();
-				$_dependencies.put("x", x);
-				$_dependencies.put("y", y);
-				$_dependencies.put("z", z);
-				$_dependencies.put("world", world);
-				ChemicalBlazeOnEntityTickUpdateProcedure.executeProcedure($_dependencies);
-			}
+
+			ChemicalBlazeOnEntityTickUpdateProcedure.executeProcedure(Stream
+					.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x), new AbstractMap.SimpleEntry<>("y", y),
+							new AbstractMap.SimpleEntry<>("z", z))
+					.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 		}
 
 		public void livingTick() {

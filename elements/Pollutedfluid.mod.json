@@ -43,6 +43,9 @@
     "frequencyOnChunks": 5,
     "spawnWorldTypes": [],
     "restrictionBiomes": [],
+    "onTickUpdate": {
+      "name": "PollutedfluidUpdateTick"
+    },
     "onEntityCollides": {
       "name": "PollutedfluidMobplayerCollidesBlock"
     }

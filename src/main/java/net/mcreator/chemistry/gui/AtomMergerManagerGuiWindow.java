@@ -27,6 +27,7 @@ public class AtomMergerManagerGuiWindow extends ContainerScreen<AtomMergerManage
 	private int x, y, z;
 	private PlayerEntity entity;
 	private final static HashMap guistate = AtomMergerManagerGui.guistate;
+
 	public AtomMergerManagerGuiWindow(AtomMergerManagerGui.GuiContainerMod container, PlayerInventory inventory, ITextComponent text) {
 		super(container, inventory, text);
 		this.world = container.world;
@@ -37,7 +38,9 @@ public class AtomMergerManagerGuiWindow extends ContainerScreen<AtomMergerManage
 		this.xSize = 176;
 		this.ySize = 166;
 	}
+
 	private static final ResourceLocation texture = new ResourceLocation("chemistry:textures/atom_merger_manager.png");
+
 	@Override
 	public void render(MatrixStack ms, int mouseX, int mouseY, float partialTicks) {
 		this.renderBackground(ms);

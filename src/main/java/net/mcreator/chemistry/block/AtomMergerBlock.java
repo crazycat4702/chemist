@@ -29,15 +29,18 @@ import net.mcreator.chemistry.procedures.AtomMergerOnBlockRightClickedProcedure;
 import net.mcreator.chemistry.itemgroup.ChemistItemGroup;
 import net.mcreator.chemistry.ChemistryModElements;
 
+import java.util.stream.Stream;
 import java.util.Map;
 import java.util.List;
 import java.util.HashMap;
 import java.util.Collections;
+import java.util.AbstractMap;
 
 @ChemistryModElements.ModElement.Tag
 public class AtomMergerBlock extends ChemistryModElements.ModElement {
 	@ObjectHolder("chemistry:atom_merger")
 	public static final Block block = null;
+
 	public AtomMergerBlock(ChemistryModElements instance) {
 		super(instance, 23);
 	}
@@ -53,6 +56,7 @@ public class AtomMergerBlock extends ChemistryModElements.ModElement {
 	public void clientLoad(FMLClientSetupEvent event) {
 		RenderTypeLookup.setRenderLayer(block, RenderType.getCutout());
 	}
+
 	public static class CustomBlock extends Block {
 		public CustomBlock() {
 			super(Block.Properties.create(Material.ANVIL).sound(SoundType.METAL).hardnessAndResistance(1f, 10f).setLightLevel(s -> 0).notSolid()
@@ -89,15 +93,11 @@ public class AtomMergerBlock extends ChemistryModElements.ModElement {
 			double hitY = hit.getHitVec().y;
 			double hitZ = hit.getHitVec().z;
 			Direction direction = hit.getFace();
-			{
-				Map<String, Object> $_dependencies = new HashMap<>();
-				$_dependencies.put("entity", entity);
-				$_dependencies.put("x", x);
-				$_dependencies.put("y", y);
-				$_dependencies.put("z", z);
-				$_dependencies.put("world", world);
-				AtomMergerOnBlockRightClickedProcedure.executeProcedure($_dependencies);
-			}
+
+			AtomMergerOnBlockRightClickedProcedure.executeProcedure(Stream
+					.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x), new AbstractMap.SimpleEntry<>("y", y),
+							new AbstractMap.SimpleEntry<>("z", z), new AbstractMap.SimpleEntry<>("entity", entity))
+					.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 			return ActionResultType.SUCCESS;
 		}
 	}

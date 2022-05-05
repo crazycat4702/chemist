@@ -27,6 +27,7 @@ public class AtomCollapserMachineActivatedGuiWindow extends ContainerScreen<Atom
 	private int x, y, z;
 	private PlayerEntity entity;
 	private final static HashMap guistate = AtomCollapserMachineActivatedGui.guistate;
+
 	public AtomCollapserMachineActivatedGuiWindow(AtomCollapserMachineActivatedGui.GuiContainerMod container, PlayerInventory inventory,
 			ITextComponent text) {
 		super(container, inventory, text);
@@ -38,7 +39,9 @@ public class AtomCollapserMachineActivatedGuiWindow extends ContainerScreen<Atom
 		this.xSize = 176;
 		this.ySize = 166;
 	}
+
 	private static final ResourceLocation texture = new ResourceLocation("chemistry:textures/atom_collapser_machine_activated.png");
+
 	@Override
 	public void render(MatrixStack ms, int mouseX, int mouseY, float partialTicks) {
 		this.renderBackground(ms);

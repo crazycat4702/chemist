@@ -25,6 +25,7 @@ import java.util.Collections;
 public class FluorineBlock extends ChemistryModElements.ModElement {
 	@ObjectHolder("chemistry:fluorine")
 	public static final Block block = null;
+
 	public FluorineBlock(ChemistryModElements instance) {
 		super(instance, 37);
 	}
@@ -34,6 +35,7 @@ public class FluorineBlock extends ChemistryModElements.ModElement {
 		elements.blocks.add(() -> new CustomBlock());
 		elements.items.add(() -> new BlockItem(block, new Item.Properties().group(ElementItemGroup.tab)).setRegistryName(block.getRegistryName()));
 	}
+
 	public static class CustomBlock extends Block {
 		public CustomBlock() {
 			super(Block.Properties.create(Material.IRON).sound(SoundType.GLASS).hardnessAndResistance(1f, 10f).setLightLevel(s -> 0).harvestLevel(2)

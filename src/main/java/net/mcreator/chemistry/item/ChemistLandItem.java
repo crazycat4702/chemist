@@ -17,6 +17,7 @@ import net.mcreator.chemistry.world.dimension.ChemistLandDimension;
 public class ChemistLandItem extends Item {
 	@ObjectHolder("chemistry:chemist_land")
 	public static final Item block = null;
+
 	public ChemistLandItem() {
 		super(new Item.Properties().group(ItemGroup.TOOLS).maxDamage(64));
 	}

@@ -15,6 +15,7 @@ import net.mcreator.chemistry.ChemistryModElements;
 public class TrigonometryItem extends ChemistryModElements.ModElement {
 	@ObjectHolder("chemistry:trigonometry")
 	public static final Item block = null;
+
 	public TrigonometryItem(ChemistryModElements instance) {
 		super(instance, 8);
 	}
@@ -23,6 +24,7 @@ public class TrigonometryItem extends ChemistryModElements.ModElement {
 	public void initElements() {
 		elements.items.add(() -> new MusicDiscItemCustom());
 	}
+
 	public static class MusicDiscItemCustom extends MusicDiscItem {
 		public MusicDiscItemCustom() {
 			super(0, ChemistryModElements.sounds.get(new ResourceLocation("chemistry:trigonometry")),

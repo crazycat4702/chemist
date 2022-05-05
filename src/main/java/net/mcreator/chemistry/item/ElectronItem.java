@@ -15,6 +15,7 @@ import net.mcreator.chemistry.ChemistryModElements;
 public class ElectronItem extends ChemistryModElements.ModElement {
 	@ObjectHolder("chemistry:electron")
 	public static final Item block = null;
+
 	public ElectronItem(ChemistryModElements instance) {
 		super(instance, 13);
 	}
@@ -23,6 +24,7 @@ public class ElectronItem extends ChemistryModElements.ModElement {
 	public void initElements() {
 		elements.items.add(() -> new ItemCustom());
 	}
+
 	public static class ItemCustom extends Item {
 		public ItemCustom() {
 			super(new Item.Properties().group(ChemistItemGroup.tab).maxStackSize(64).rarity(Rarity.EPIC));
